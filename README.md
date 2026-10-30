@@ -6,9 +6,9 @@ AgentBell 的介绍网站，纯静态 HTML / CSS / JavaScript，无构建步骤�
 
 ## 内容
 
-- `index.html`：单页站点（中文默认，右上角可切到 English）
-- `assets/site.css`：视觉样式与响应式布局
-- `assets/site.js`：中英切换、截图标签页、复制指令、滚动动效
+- `index.html`：单页站点（中文默认、白色黑白主题默认，右上角可切语言与明暗主题）
+- `assets/site.css`：视觉样式、明暗主题与响应式布局
+- `assets/site.js`：中英切换、主题持久化、截图标签页、复制指令、滚动动效
 - `assets/screenshots/`：AgentBell 真实界面截图
 - `assets/mark.svg` / `assets/icon-256.png`：标志与图标
 

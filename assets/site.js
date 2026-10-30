@@ -10,6 +10,8 @@
     "a11y.nav": "Page navigation",
     "a11y.preview": "AgentBell notification center preview",
     "a11y.footer": "Footer navigation",
+    "theme.toDark": "Switch to dark theme",
+    "theme.toLight": "Switch to light theme",
 
     "nav.why": "Why",
     "nav.features": "Features",
@@ -153,6 +155,9 @@
 
   var root = document.documentElement;
   var langBtn = document.getElementById("langBtn");
+  var themeBtn = document.getElementById("themeBtn");
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+  var THEME_KEY = "agentbell-site-theme";
   var elements = [].slice.call(
     document.querySelectorAll("[data-i18n],[data-i18n-html],[data-i18n-attr],[data-i18n-aria]")
   );
@@ -191,6 +196,36 @@
     return "zh";
   }
 
+  function syncThemeButton(langCode) {
+    if (!themeBtn) return;
+    var dark = root.getAttribute("data-theme") === "dark";
+    var label =
+      langCode === "en"
+        ? dark
+          ? EN["theme.toLight"]
+          : EN["theme.toDark"]
+        : dark
+          ? "切换到浅色主题"
+          : "切换到深色主题";
+    themeBtn.setAttribute("aria-label", label);
+    themeBtn.setAttribute("title", label);
+  }
+
+  function applyTheme(theme, persist) {
+    var next = theme === "dark" ? "dark" : "light";
+    root.setAttribute("data-theme", next);
+    if (themeMeta) {
+      themeMeta.setAttribute("content", next === "dark" ? "#080B10" : "#F6F5F1");
+    }
+    syncThemeButton(lang);
+    if (persist === false) return;
+    try {
+      window.localStorage.setItem(THEME_KEY, next);
+    } catch (error) {
+      /* ignore */
+    }
+  }
+
   function applyLanguage(lang) {
     var en = lang === "en";
     root.lang = en ? "en" : "zh-CN";
@@ -224,6 +259,8 @@
       langBtn.setAttribute("aria-label", en ? "切换到中文" : "Switch to English");
     }
 
+    syncThemeButton(lang);
+
     try {
       window.localStorage.setItem("agentbell-site-lang", lang);
     } catch (error) {
@@ -238,6 +275,16 @@
     langBtn.addEventListener("click", function () {
       lang = lang === "zh" ? "en" : "zh";
       applyLanguage(lang);
+    });
+  }
+
+  var theme = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  applyTheme(theme, false);
+
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      theme = theme === "dark" ? "light" : "dark";
+      applyTheme(theme);
     });
   }
 
