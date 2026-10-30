@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgentBell · 本机通知中心，让 Agent 收工有铃声</title>
+<meta name="description" data-i18n-attr="content:meta.description" content="AgentBell 是一个只做提醒的 Windows 本机通知中心。Claude Code、Codex、Gemini CLI 等 Agent 每轮结束，屏幕角落递上一张置顶卡片；支持历史、统计、回到终端与一键运行环境。">
+<meta name="theme-color" content="#080B10">
+<meta property="og:type" content="website">
+<meta property="og:title" data-i18n-attr="content:meta.title" content="AgentBell · 本机通知中心，让 Agent 收工有铃声">
+<meta property="og:description" data-i18n-attr="content:meta.description" content="只做提醒的 Windows 本机通知中心。Agent 每轮结束，屏幕角落递上一张置顶卡片。">
+<meta property="og:image" content="https://1wu-davy-2.github.io/agentbell-site/assets/screenshots/notification-center.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-256.png">
+<link rel="preload" as="image" href="assets/screenshots/notification-center.png">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">跳到主要内容</a>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top" aria-label="AgentBell 首页" data-i18n-aria="a11y.home">
+      <img src="assets/mark.svg" alt="" width="30" height="30">
+      <span class="brand-name">AgentBell</span>
+      <span class="brand-tag">LOCAL DESK</span>
+    </a>
+    <nav class="nav-links" aria-label="页面导航" data-i18n-aria="a11y.nav">
+      <a href="#why" data-i18n="nav.why">为什么</a>
+      <a href="#features" data-i18n="nav.features">能力</a>
+      <a href="#screens" data-i18n="nav.screens">界面</a>
+      <a href="#start" data-i18n="nav.start">上手</a>
+      <a href="#runtime" data-i18n="nav.runtime">运行环境</a>
+      <a href="#faq" data-i18n="nav.faq">问答</a>
+    </nav>
+    <div class="topbar-actions">
+      <button class="lang-btn" id="langBtn" type="button" aria-label="切换语言 / Switch language">EN</button>
+      <a class="gh-link" href="https://github.com/1wu-davy-2/AgentBell" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 16 16" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+      </a>
+      <a class="btn btn-sm btn-amber" href="https://github.com/1wu-davy-2/AgentBell/releases/latest" data-i18n="nav.download">下载</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow reveal" data-i18n="hero.eyebrow">本机通知中心 · WINDOWS DESKTOP</p>
+        <h1 class="reveal delay-1" data-i18n-html="hero.title">Agent 收工，<br><em>铃声替你回头。</em></h1>
+        <p class="hero-lead reveal delay-2" data-i18n="hero.lead">一个只做提醒的本地通知中心。Claude Code、Codex、Gemini CLI 跑完一轮，屏幕角落递上一张置顶卡片——不用切回终端，也不会错过最后一条结果。</p>
+        <div class="hero-cta reveal delay-3">
+          <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
+            <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>
+            <span data-i18n="hero.cta">下载 Windows 版</span>
+          </a>
+          <a class="btn btn-ghost btn-lg" href="https://github.com/1wu-davy-2/AgentBell" target="_blank" rel="noopener">
+            <span data-i18n="hero.gh">查看 GitHub</span>
+            <span class="arrow">↗</span>
+          </a>
+        </div>
+        <p class="hero-note reveal delay-4"><span class="ver">v2.9.1</span><span class="dot-sep"></span><span data-i18n="hero.note">免安装单文件 · 约 58 MB · 只监听 127.0.0.1</span></p>
+      </div>
+
+      <div class="hero-stage reveal delay-2" aria-label="AgentBell 通知中心界面预览" data-i18n-aria="a11y.preview">
+        <div class="beacon" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="hero-side-label" aria-hidden="true">LOCAL ONLY / 127.0.0.1</div>
+        <div class="device">
+          <div class="device-bar">
+            <span class="win-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="device-title" data-i18n="hero.device">AgentBell · 通知中心</span>
+            <span class="device-port">:8765</span>
+          </div>
+          <img class="device-shot" src="assets/screenshots/notification-center.png" width="1120" height="760" alt="AgentBell 通知中心：左侧按状态筛选，右侧通知卡片列表" data-i18n-attr="alt:hero.deviceAlt">
+        </div>
+        <div class="float-card float-toast">
+          <div class="float-head">
+            <span class="float-bell" aria-hidden="true"><img src="assets/mark.svg" alt=""></span>
+            <span class="float-agent" data-i18n="hero.float.agent">Claude Code</span>
+            <span class="float-status"><i></i><span data-i18n="hero.float.status">已完成</span></span>
+          </div>
+          <p class="float-title" data-i18n="hero.float.title">周报已生成</p>
+          <div class="float-foot">
+            <span data-i18n="hero.float.meta">12 页 · 8m30s</span>
+            <span class="float-action" data-i18n="hero.float.action">回到终端</span>
+          </div>
+        </div>
+        <div class="float-card float-signal" aria-hidden="true">
+          <span class="signal-label">7-DAY SIGNAL</span>
+          <svg viewBox="0 0 120 34" width="120" height="34"><path d="M2 28 L20 24 L38 26 L56 16 L74 19 L92 8 L118 4" fill="none" stroke="#FFB45E" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="signal-value">96.4%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>CLAUDE CODE<i>✦</i>CODEX<i>✦</i>GEMINI CLI<i>✦</i>OPENCODE<i>✦</i>OPENCLAW<i>✦</i>HERMES<i>✦</i>PI<i>✦</i>CLAUDE DESKTOP<i>✦</i>ANTIGRAVITY<i>✦</i></span>
+        <span>CLAUDE CODE<i>✦</i>CODEX<i>✦</i>GEMINI CLI<i>✦</i>OPENCODE<i>✦</i>OPENCLAW<i>✦</i>HERMES<i>✦</i>PI<i>✦</i>CLAUDE DESKTOP<i>✦</i>ANTIGRAVITY<i>✦</i></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label" data-i18n="why.label">01 / 为什么</p>
+        <h2 class="section-title" data-i18n-html="why.title">你不需要<br>一直看着它。</h2>
+        <p class="section-lead" data-i18n="why.lead">Agent 的工作发生在终端里，但等待不该占据你的注意力。AgentBell 把「跑完了」这一件事做好，其余时间保持安静。</p>
+      </div>
+      <div class="principles">
+        <article class="principle" data-reveal>
+          <span class="principle-no">01</span>
+          <div class="principle-body">
+            <h3 data-i18n="why.1.title">走开也没关系</h3>
+            <p data-i18n="why.1.body">任务交给 Agent，时间还给自己。只在每轮结束时提醒一次，过程不打扰。</p>
+          </div>
+          <span class="principle-mark" aria-hidden="true">◷</span>
+        </article>
+        <article class="principle" data-reveal>
+          <span class="principle-no">02</span>
+          <div class="principle-body">
+            <h3 data-i18n="why.2.title">只在该响的时候响</h3>
+            <p data-i18n="why.2.body">免打扰时段、全屏与会议抑制、锁屏保留、成功仅入中心——铃声有分寸。</p>
+          </div>
+          <span class="principle-mark" aria-hidden="true">◐</span>
+        </article>
+        <article class="principle" data-reveal>
+          <span class="principle-no">03</span>
+          <div class="principle-body">
+            <h3 data-i18n="why.3.title">一眼回到现场</h3>
+            <p data-i18n="why.3.body">通知带上来源进程时，卡片会出现「回到终端」，把宿主窗口切到前台。</p>
+          </div>
+          <span class="principle-mark" aria-hidden="true">→</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section features" id="features">
+    <div class="wrap">
+      <div class="section-head split">
+        <div>
+          <p class="label" data-i18n="features.label">02 / 能力</p>
+          <h2 class="section-title" data-i18n-html="features.title">小工具，<br>该有的都有。</h2>
+        </div>
+        <p class="section-lead right" data-i18n="features.lead">不做编排、不代理模型、不上传数据。只把通知、历史和回到现场做到顺手。</p>
+      </div>
+
+      <div class="bento">
+        <article class="card card-a" data-reveal>
+          <div class="card-copy">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 8a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 18a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>
+            <h3 data-i18n="feature.toast.title">置顶卡片</h3>
+            <p data-i18n="feature.toast.body">三种弹出模式、四套皮肤；全屏时按设定区域落位，不抢焦点。</p>
+          </div>
+          <div class="toast-stack" aria-hidden="true">
+            <div class="mini-card mc-3"><span class="mini-dot"></span><span>OpenClaw · <span data-i18n="common.done">已完成</span></span></div>
+            <div class="mini-card mc-2"><span class="mini-dot blue"></span><span>Gemini CLI · <span data-i18n="common.running">进行中</span></span></div>
+            <div class="mini-card mc-1">
+              <div class="mini-top"><span class="mini-dot amber"></span><strong>Claude Code</strong><span class="mini-pill" data-i18n="common.done">已完成</span></div>
+              <p data-i18n="feature.toast.sample">登录页重构完成</p>
+              <div class="mini-bottom"><span>6m12s</span><span class="mini-link" data-i18n="feature.toast.back">回到终端 →</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card-b" data-reveal>
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 20V10M9 20V4M14 20v-7M19 20V7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          <h3 data-i18n="feature.center.title">通知中心</h3>
+          <p data-i18n="feature.center.body">按状态筛选、全文搜索、1000 条历史，附 7 天完成率趋势。</p>
+          <div class="mini-bars" aria-hidden="true">
+            <i style="--h:38%"></i><i style="--h:62%"></i><i style="--h:50%"></i><i style="--h:78%"></i><i style="--h:64%"></i><i style="--h:88%"></i><i class="on" style="--h:96%"></i>
+          </div>
+        </article>
+
+        <article class="card card-c" data-reveal>
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6l6 6-6 6M12 18h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 data-i18n="feature.launch.title">Agent 启动</h3>
+          <p data-i18n="feature.launch.body">检测并启动 11 种 Agent，默认工作区是安装目录下的 chat/。</p>
+          <div class="terminal-line" aria-hidden="true"><span class="prompt">›</span> claude <span class="str" data-i18n="feature.launch.sample">"修复登录流程"</span><span class="caret"></span></div>
+        </article>
+
+        <article class="card card-d" data-reveal>
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3v10m0 0 4-4m-4 4-4-4M5 17v2h14v-2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 data-i18n="feature.runtime.title">便携运行环境</h3>
+          <p data-i18n="feature.runtime.body">一键装好 Node LTS 与 7 个官方 Agent CLI，不写系统 PATH。</p>
+          <div class="chip-row" aria-hidden="true"><span>Node</span><span>Claude</span><span>Codex</span><span>Gemini</span><span>+4</span></div>
+        </article>
+
+        <article class="card card-e" data-reveal>
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18" stroke="currentColor" stroke-width="1.6"/><path d="M7 6.5h.01M10 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <h3 data-i18n="feature.focus.title">回到终端</h3>
+          <p data-i18n="feature.focus.body">沿父进程链定位宿主终端或编辑器，只聚焦窗口，不执行命令。</p>
+          <div class="focus-ring" aria-hidden="true"><span>Windows Terminal</span><i>FOCUS</i></div>
+        </article>
+
+        <article class="card card-f" data-reveal>
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="15" r="1.3" fill="currentColor"/></svg>
+          </span>
+          <h3 data-i18n="feature.local.title">本地优先</h3>
+          <p data-i18n="feature.local.body">HTTP 只绑 127.0.0.1，历史落在本机 SQLite，无账号、无遥测。</p>
+          <div class="local-ip" aria-hidden="true">127.0.0.1<span>LOOPBACK</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section screens" id="screens">
+    <div class="wrap">
+      <div class="section-head split">
+        <div>
+          <p class="label" data-i18n="screens.label">03 / 界面</p>
+          <h2 class="section-title" data-i18n-html="screens.title">一个窗口，<br>装下所有回执。</h2>
+        </div>
+        <div class="tab-list" role="tablist" aria-label="界面截图" data-i18n-aria="screens.tablist">
+          <button class="tab is-active" role="tab" id="tab-center" aria-controls="panel-center" aria-selected="true" data-i18n="screens.tab.center">通知中心</button>
+          <button class="tab" role="tab" id="tab-stats" aria-controls="panel-stats" aria-selected="false" tabindex="-1" data-i18n="screens.tab.stats">数据统计</button>
+          <button class="tab" role="tab" id="tab-launcher" aria-controls="panel-launcher" aria-selected="false" tabindex="-1" data-i18n="screens.tab.launcher">Agent 启动</button>
+          <button class="tab" role="tab" id="tab-runtime" aria-controls="panel-runtime" aria-selected="false" tabindex="-1" data-i18n="screens.tab.runtime">运行环境</button>
+          <button class="tab" role="tab" id="tab-settings" aria-controls="panel-settings" aria-selected="false" tabindex="-1" data-i18n="screens.tab.settings">偏好设置</button>
+        </div>
+      </div>
+
+      <div class="shot-stage">
+        <div class="shot-glow" aria-hidden="true"></div>
+        <div class="shot-panel is-active" id="panel-center" role="tabpanel" aria-labelledby="tab-center">
+          <div class="shot-frame"><img src="assets/screenshots/notification-center.png" width="1120" height="760" alt="通知中心界面" loading="lazy" data-i18n-attr="alt:screens.alt.center"></div>
+          <div class="shot-caption"><span class="shot-no">01</span><p data-i18n="screens.center.caption">置顶弹出、搜索筛选、稍后提醒与「回到终端」，都在这一页。</p></div>
+        </div>
+        <div class="shot-panel" id="panel-stats" role="tabpanel" aria-labelledby="tab-stats" hidden>
+          <div class="shot-frame"><img src="assets/screenshots/statistics.png" width="1120" height="760" alt="数据统计界面" loading="lazy" data-i18n-attr="alt:screens.alt.stats"></div>
+          <div class="shot-caption"><span class="shot-no">02</span><p data-i18n="screens.stats.caption">完成率、平均耗时与 7 天趋势，数据来自本机历史。</p></div>
+        </div>
+        <div class="shot-panel" id="panel-launcher" role="tabpanel" aria-labelledby="tab-launcher" hidden>
+          <div class="shot-frame"><img src="assets/screenshots/agent-launcher.png" width="1120" height="760" alt="Agent 启动界面" loading="lazy" data-i18n-attr="alt:screens.alt.launcher"></div>
+          <div class="shot-caption"><span class="shot-no">03</span><p data-i18n="screens.launcher.caption">11 种 Agent 的检测、项目选择与一键启动。</p></div>
+        </div>
+        <div class="shot-panel" id="panel-runtime" role="tabpanel" aria-labelledby="tab-runtime" hidden>
+          <div class="shot-frame"><img src="assets/screenshots/toolchain.png" width="1120" height="760" alt="运行环境界面" loading="lazy" data-i18n-attr="alt:screens.alt.runtime"></div>
+          <div class="shot-caption"><span class="shot-no">04</span><p data-i18n="screens.runtime.caption">Node、7 个 CLI 与工具状态，一页装好、随时卸载。</p></div>
+        </div>
+        <div class="shot-panel" id="panel-settings" role="tabpanel" aria-labelledby="tab-settings" hidden>
+          <div class="shot-frame"><img src="assets/screenshots/settings-update.png" width="1120" height="760" alt="偏好设置界面" loading="lazy" data-i18n-attr="alt:screens.alt.settings"></div>
+          <div class="shot-caption"><span class="shot-no">05</span><p data-i18n="screens.settings.caption">外观、打扰策略、自更新、规则与外部渠道。</p></div>
+        </div>
+      </div>
+      <p class="shot-hint" data-i18n="screens.hint">截图使用独立调试端口 18776；默认端口为 127.0.0.1:8765。</p>
+    </div>
+  </section>
+
+  <section class="section start" id="start">
+    <div class="wrap start-grid">
+      <div class="start-copy">
+        <p class="label" data-i18n="start.label">04 / 上手</p>
+        <h2 class="section-title" data-i18n-html="start.title">三步，<br>让铃声接管等待。</h2>
+        <ol class="steps">
+          <li data-reveal>
+            <span class="step-no">01</span>
+            <div><h3 data-i18n="start.step1.title">下载并双击</h3><p data-i18n="start.step1.body">把 AgentBell.exe 放进任意可写目录，双击运行；SmartScreen 提示时选择「更多信息 → 仍要运行」。</p></div>
+          </li>
+          <li data-reveal>
+            <span class="step-no">02</span>
+            <div><h3 data-i18n="start.step2.title">设一个 token</h3><p data-i18n="start.step2.body">打开同目录的 config.json，填写 token；留空则关闭鉴权，只建议在本机使用。</p></div>
+          </li>
+          <li data-reveal>
+            <span class="step-no">03</span>
+            <div><h3 data-i18n="start.step3.title">让 Agent 调用 /notify</h3><p data-i18n="start.step3.body">一轮结束时 POST 一次；工具栏的「复制 Agent 接入指令」可把说明直接交给 Agent。</p></div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="code-card" data-reveal>
+        <div class="code-head">
+          <span class="code-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="code-title" data-i18n="start.terminal.title">Agent 接入指令</span>
+          <button class="copy-btn" id="copyBtn" type="button" data-i18n="start.copy" data-i18n-aria="start.copyAria" aria-label="复制接入指令">复制</button>
+        </div>
+<pre class="code" id="code"><code><span class="tok-cmd">curl</span> -X POST http://127.0.0.1:8765/notify \
+  -H <span class="tok-str">"Content-Type: application/json; charset=utf-8"</span> \
+  -H <span class="tok-str">"X-Token: your-token"</span> \
+  -d <span class="tok-str">'{
+    "title": "周报已生成",
+    "status": "succeeded",
+    "summary": "12 页 · 8m30s",
+    "source": "Claude Code",
+    "origin": {"pid": 12345}
+  }'</span></code></pre>
+        <p class="code-note" data-i18n="start.terminal.note">Agent 也可以发送 origin.pid 等字段，换来回终端按钮。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section runtime" id="runtime">
+    <div class="wrap runtime-grid">
+      <div class="runtime-copy">
+        <p class="label" data-i18n="runtime.label">05 / 运行环境</p>
+        <h2 class="section-title" data-i18n-html="runtime.title">Node 这件事，<br>也替你做完了。</h2>
+        <p class="section-lead" data-i18n="runtime.lead">普通用户不用自己准备 Node。在「运行环境」页点一次，官方 Node LTS 与 7 个 Agent CLI 就装进安装目录的 runtime/。</p>
+        <ul class="runtime-list">
+          <li><span class="rt-key">Node</span><span data-i18n="runtime.node">官方 LTS 便携包 · SHASUMS256 校验</span></li>
+          <li><span class="rt-key">CLI ×7</span><span data-i18n="runtime.agents">7 个官方 npm CLI · 装进 runtime/agents</span></li>
+          <li><span class="rt-key">cc-switch</span><span data-i18n="runtime.cc">独立便携应用，页面直达下载</span></li>
+          <li><span class="rt-key">DeepSeek</span><span data-i18n="runtime.deepseek">作为供应商预设注入 Claude Code</span></li>
+        </ul>
+        <p class="runtime-note" data-i18n="runtime.note">免管理员权限 · 不改系统 PATH · 支持单个卸载与重新检测</p>
+      </div>
+      <div class="runtime-visual" data-reveal>
+        <div class="rv-head"><span class="rv-badge">RUNTIME</span><span class="rv-line"></span><span class="rv-port">runtime/</span></div>
+<pre class="tree"><code>runtime/
+├─ node/        <span data-i18n="runtime.tree.node">官方 LTS 便携包</span>
+├─ agents/      <span data-i18n="runtime.tree.agents">7 个官方 CLI</span>
+├─ cache/       <span data-i18n="runtime.tree.cache">npm 缓存</span>
+├─ npmrc        <span data-i18n="runtime.tree.npmrc">隔离的 npm 配置</span>
+└─ tools.json   <span data-i18n="runtime.tree.tools">版本与校验记录</span></code></pre>
+        <div class="rv-foot"><span class="pulse-dot"></span><span>NO ADMIN · NO PATH CHANGE</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section privacy" id="privacy">
+    <div class="wrap">
+      <p class="label" data-i18n="privacy.label">06 / 边界</p>
+      <h2 class="section-title privacy-title" data-i18n-html="privacy.title">通知，<br>只在 127.0.0.1 之间发生。</h2>
+      <div class="privacy-grid">
+        <article data-reveal><span class="privacy-num">0</span><h3 data-i18n="privacy.0.title">云端依赖</h3><p data-i18n="privacy.0.body">没有账号、没有遥测、没有统计上报。</p></article>
+        <article data-reveal><span class="privacy-num">127.0.0.1</span><h3 data-i18n="privacy.1.title">唯一监听地址</h3><p data-i18n="privacy.1.body">HTTP 只绑定回环地址，不暴露到局域网。</p></article>
+        <article data-reveal><span class="privacy-num">SQLite</span><h3 data-i18n="privacy.2.title">本机历史</h3><p data-i18n="privacy.2.body">通知与统计留在本机，默认 1000 条，可随时清除。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="wrap faq-grid">
+      <div class="faq-head">
+        <p class="label" data-i18n="faq.label">07 / 问答</p>
+        <h2 class="section-title" data-i18n="faq.title">也许你还想知道。</h2>
+      </div>
+      <div class="faq-list">
+        <details data-reveal>
+          <summary><span data-i18n="faq.q1">支持哪些 Agent？</span><i aria-hidden="true"></i></summary>
+          <p data-i18n="faq.a1">检测与启动覆盖 Claude Code、Claude Desktop、Codex、Gemini CLI、Grok Build、OpenCode、OpenClaw、Hermes、Pi、MiniMax Code 与 Antigravity。运行环境只代装其中 7 个官方 npm CLI。</p>
+        </details>
+        <details data-reveal>
+          <summary><span data-i18n="faq.q2">需要管理员权限吗？</span><i aria-hidden="true"></i></summary>
+          <p data-i18n="faq.a2">不需要。Node 与 CLI 都装在安装目录的 runtime/ 下，不写系统全局目录，也不修改系统 PATH。</p>
+        </details>
+        <details data-reveal>
+          <summary><span data-i18n="faq.q3">数据会被上传吗？</span><i aria-hidden="true"></i></summary>
+          <p data-i18n="faq.a3">不会。HTTP 服务只监听 127.0.0.1，历史存在本机 SQLite；没有账号、云同步或遥测。</p>
+        </details>
+        <details data-reveal>
+          <summary><span data-i18n="faq.q4">支持 macOS / Linux 吗？</span><i aria-hidden="true"></i></summary>
+          <p data-i18n="faq.a4">弹窗、通知中心与 HTTP 服务可以从源码运行；托盘、全局热键、全屏/会议检测、回到终端与便携 Node 是 Windows 专属。运行环境目前只支持 Windows。</p>
+        </details>
+        <details data-reveal>
+          <summary><span data-i18n="faq.q5">怎么更新？</span><i aria-hidden="true"></i></summary>
+          <p data-i18n="faq.a5">在偏好设置里填写 GitHub 仓库并开启启动检查；更新包只从 GitHub HTTPS 下载，校验大小与 SHA-256，退出时替换、备份并重启。源码模式只下载安装包，不替换正在运行的 Python 进程。</p>
+        </details>
+        <details data-reveal>
+          <summary><span data-i18n="faq.q6">为什么没有网页版？</span><i aria-hidden="true"></i></summary>
+          <p data-i18n="faq.a6">AgentBell 刻意做成原生 PySide6 窗口：更贴近桌面、更低打扰，也不需要你常驻一个浏览器标签页。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-beacon" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="wrap cta-inner">
+      <h2 data-i18n-html="cta.title">下一次 Agent 收工，<br><em>让铃声替你看。</em></h2>
+      <p class="cta-sub" data-i18n="cta.sub">Windows 10 / 11 · v2.9.1 · MIT License</p>
+      <div class="hero-cta">
+        <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
+          <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>
+          <span data-i18n="cta.download">下载 Windows 版</span>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="https://github.com/1wu-davy-2/AgentBell" target="_blank" rel="noopener"><span data-i18n="cta.gh">在 GitHub 上查看</span><span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="#top"><img src="assets/mark.svg" alt="" width="28" height="28"><span class="brand-name">AgentBell</span></a>
+      <p data-i18n="footer.tag">本机通知中心，为 AI Agent 而做。</p>
+    </div>
+    <nav class="footer-links" aria-label="页脚导航" data-i18n-aria="a11y.footer">
+      <a href="https://github.com/1wu-davy-2/AgentBell" target="_blank" rel="noopener" data-i18n="footer.source">源码</a>
+      <a href="https://github.com/1wu-davy-2/AgentBell/releases" target="_blank" rel="noopener" data-i18n="footer.releases">发布</a>
+      <a href="https://github.com/1wu-davy-2/AgentBell/blob/develop/README.md" target="_blank" rel="noopener" data-i18n="footer.readme">文档</a>
+      <a href="https://github.com/1wu-davy-2/AgentBell/blob/develop/README.en.md" target="_blank" rel="noopener" data-i18n="footer.en">英文说明</a>
+    </nav>
+    <p class="footer-meta"><span data-i18n="footer.license">MIT License · © 2026 1wu-davy-2</span><span class="dot-sep"></span><span data-i18n="footer.note">无第三方脚本 · 无追踪</span></p>
+  </div>
+</footer>
+
+<div class="toast-copied" id="toastCopied" role="status" aria-live="polite" data-i18n="start.copied" hidden>已复制</div>
+<script src="assets/site.js"></script>
+</body>
+</html>
