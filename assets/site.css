@@ -651,6 +651,36 @@ html[lang="en"] .hero h1 { font-size: clamp(44px, 4.7vw, 66px); letter-spacing: 
 .shot-caption p { font-size: 13px; color: var(--muted); }
 .shot-hint { margin-top: 16px; text-align: right; font-family: var(--mono); font-size: 9.5px; color: var(--dim); }
 
+/* ---------- updates ---------- */
+.release-list { border-top: 1px solid var(--line); }
+.release {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr) auto;
+  grid-template-areas: "ver body flag";
+  gap: 26px;
+  align-items: start;
+  padding: 28px 22px;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.3s ease;
+}
+.release:hover { background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.05), transparent 65%); }
+.release-ver { grid-area: ver; font-family: var(--mono); font-size: 10px; letter-spacing: 0.13em; color: var(--amber); padding-top: 5px; white-space: nowrap; }
+.release-body { grid-area: body; }
+.release-body h3 { font-size: 18px; font-weight: 600; letter-spacing: 0.01em; }
+.release-body p { margin-top: 8px; max-width: 720px; font-size: 13.5px; line-height: 1.9; color: var(--muted); }
+.release-flag {
+  grid-area: flag;
+  font-family: var(--mono);
+  font-size: 8.5px;
+  letter-spacing: 0.14em;
+  color: var(--amber);
+  border: 1px solid rgba(var(--accent-rgb), 0.32);
+  border-radius: 999px;
+  padding: 3px 9px;
+  white-space: nowrap;
+}
+.release-more { margin-top: 28px; display: flex; justify-content: flex-end; }
+
 /* ---------- start ---------- */
 .start-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 .steps { list-style: none; margin-top: 44px; padding: 0; border-top: 1px solid var(--line); }
@@ -1005,6 +1035,15 @@ html[data-theme="light"] .toast-copied { box-shadow: 0 16px 38px rgba(20, 20, 15
   .section-head { margin-bottom: 42px; }
   .principle { grid-template-columns: 48px 1fr; gap: 16px; padding: 26px 4px; }
   .principle-mark { display: none; }
+  .release {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "ver flag" "body body";
+    gap: 10px 14px;
+    padding: 26px 4px;
+  }
+  .release-ver { padding-top: 0; }
+  .release-flag { align-self: center; }
+  .release-more { justify-content: flex-start; }
   .card-a, .card-b, .card-c, .card-d, .card-e, .card-f { grid-column: span 6; }
   .card-a { min-height: 380px; }
   .tab-list { width: 100%; overflow-x: auto; border-radius: 14px; scrollbar-width: none; }
