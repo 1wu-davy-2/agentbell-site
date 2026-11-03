@@ -27,7 +27,7 @@
     "hero.lead": "A local notification center that does exactly one thing. When Claude Code, Codex, or Gemini CLI finishes a turn, a pinned card appears in the corner of your screen — no tab-switching, no missed last message.",
     "hero.cta": "Download for Windows",
     "hero.gh": "View on GitHub",
-    "hero.note": "Single portable exe · ~85 MB · listens on 127.0.0.1 only",
+    "hero.note": "Single portable exe · ~58 MB · listens on 127.0.0.1 only",
     "hero.device": "AgentBell · Notification Center",
     "hero.deviceAlt": "AgentBell notification center: live sessions under Running, with status and source filters on the left",
     "hero.float.agent": "Claude Code",
