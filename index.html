@@ -9,11 +9,11 @@
 <meta property="og:type" content="website">
 <meta property="og:title" data-i18n-attr="content:meta.title" content="AgentBell · 本机通知中心，让 Agent 收工有铃声">
 <meta property="og:description" data-i18n-attr="content:meta.description" content="只做提醒的 Windows 本机通知中心。Agent 每轮结束递上一张置顶卡片，进行中页还会自动汇集最近活跃的 Agent 会话。">
-<meta property="og:image" content="https://1wu-davy-2.github.io/agentbell-site/assets/screenshots/notification-center.png?v=299">
+<meta property="og:image" content="https://1wu-davy-2.github.io/agentbell-site/assets/screenshots/notification-center.png?v=2910">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/icon-256.png">
-<link rel="preload" as="image" href="assets/screenshots/notification-center.png?v=299">
+<link rel="preload" as="image" href="assets/screenshots/notification-center.png?v=2910">
 <link rel="stylesheet" href="assets/site.css">
 <script>
 document.documentElement.classList.add('js');
@@ -76,7 +76,7 @@ try {
             <span class="arrow">↗</span>
           </a>
         </div>
-        <p class="hero-note reveal delay-4"><span class="ver">v2.9.9</span><span class="dot-sep"></span><span data-i18n="hero.note">免安装单文件 · 约 58 MB · 只监听 127.0.0.1</span></p>
+        <p class="hero-note reveal delay-4"><span class="ver">v2.9.10</span><span class="dot-sep"></span><span data-i18n="hero.note">免安装单文件 · 约 58 MB · 只监听 127.0.0.1</span></p>
       </div>
 
       <div class="hero-stage reveal delay-2" aria-label="AgentBell 通知中心界面预览" data-i18n-aria="a11y.preview">
@@ -88,7 +88,7 @@ try {
             <span class="device-title" data-i18n="hero.device">AgentBell · 通知中心</span>
             <span class="device-port">:8765</span>
           </div>
-          <img class="device-shot" src="assets/screenshots/notification-center.png?v=299" width="1120" height="760" alt="AgentBell 通知中心：进行中页自动显示活跃会话，左侧按状态与来源筛选" data-i18n-attr="alt:hero.deviceAlt">
+          <img class="device-shot" src="assets/screenshots/notification-center.png?v=2910" width="1120" height="760" alt="AgentBell 通知中心：进行中页自动显示活跃会话，左侧按状态与来源筛选" data-i18n-attr="alt:hero.deviceAlt">
         </div>
         <div class="float-card float-toast">
           <div class="float-head">
@@ -253,7 +253,7 @@ try {
       <div class="shot-stage">
         <div class="shot-glow" aria-hidden="true"></div>
         <div class="shot-panel is-active" id="panel-center" role="tabpanel" aria-labelledby="tab-center">
-          <div class="shot-frame"><img src="assets/screenshots/notification-center.png?v=299" width="1120" height="760" alt="通知中心：进行中页的活跃会话" loading="lazy" data-i18n-attr="alt:screens.alt.center"></div>
+          <div class="shot-frame"><img src="assets/screenshots/notification-center.png?v=2910" width="1120" height="760" alt="通知中心：进行中页的活跃会话" loading="lazy" data-i18n-attr="alt:screens.alt.center"></div>
           <div class="shot-caption"><span class="shot-no">01</span><p data-i18n="screens.center.caption">状态、Agent 来源与搜索叠加筛选；活跃会话自动汇入「进行中」，回到终端就在卡片上。</p></div>
         </div>
         <div class="shot-panel" id="panel-stats" role="tabpanel" aria-labelledby="tab-stats" hidden>
@@ -288,18 +288,25 @@ try {
       </div>
       <div class="release-list">
         <article class="release" data-reveal>
+          <span class="release-ver">v2.9.10</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2910.title">首次运行就备好更新</h3>
+            <p data-i18n="updates.2910.body">生成的 config.json 默认填入 1wu-davy-2/AgentBell 并保持启动检查，下载后约 9 秒就会查询 Releases；从旧版本升级且仓库为空的配置不会被覆盖。</p>
+          </div>
+          <span class="release-flag" data-i18n="updates.latest">最新</span>
+        </article>
+        <article class="release" data-reveal>
           <span class="release-ver">v2.9.9</span>
           <div class="release-body">
             <h3 data-i18n="updates.299.title">「进行中」自动汇集活跃会话</h3>
             <p data-i18n="updates.299.body">扫描结果里最近两个周期内仍有写入的会话，会以只读卡片出现在「进行中」，标注 Agent、项目、最近活动与记录数；随来源筛选与搜索收窄，不计入「全部」。</p>
           </div>
-          <span class="release-flag" data-i18n="updates.latest">最新</span>
         </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.9.8</span>
           <div class="release-body">
-            <h3 data-i18n="updates.298.title">Agent 来源筛选与更新预填</h3>
-            <p data-i18n="updates.298.body">来源 Agent 移到标题行，通知中心新增来源下拉，可与状态、搜索叠加；安装包预填更新仓库，启动约 9 秒自动检查新版本。</p>
+            <h3 data-i18n="updates.298.title">Agent 来源筛选与更新检查</h3>
+            <p data-i18n="updates.298.body">来源 Agent 移到标题行，通知中心新增来源下拉，可与状态、搜索叠加；更新设置支持填写仓库，并在启动约 9 秒后检查新版本。</p>
           </div>
         </article>
         <article class="release" data-reveal>
@@ -432,7 +439,7 @@ try {
         </details>
         <details data-reveal>
           <summary><span data-i18n="faq.q5">怎么更新？</span><i aria-hidden="true"></i></summary>
-          <p data-i18n="faq.a5">安装包已预填更新仓库 1wu-davy-2/AgentBell，启动约 9 秒自动检查，托盘与设置页也可手动检查；更新包只从 GitHub HTTPS 下载，校验大小与 SHA-256，退出时替换、备份并重启。源码模式只下载安装包，不替换正在运行的 Python 进程。</p>
+          <p data-i18n="faq.a5">首次运行生成的 config.json 已预填更新仓库 1wu-davy-2/AgentBell，并默认勾选启动检查；启动约 9 秒自动检查，托盘与设置页也可手动检查。更新包只从 GitHub HTTPS 下载，校验大小与 SHA-256，退出时替换、备份并重启。源码模式只下载安装包，不替换正在运行的 Python 进程。</p>
         </details>
         <details data-reveal>
           <summary><span data-i18n="faq.q7">「进行中」里的活跃会话是什么？</span><i aria-hidden="true"></i></summary>
@@ -450,7 +457,7 @@ try {
     <div class="cta-beacon" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="wrap cta-inner">
       <h2 data-i18n-html="cta.title">下一次 Agent 收工，<br><em>让铃声替你看。</em></h2>
-      <p class="cta-sub" data-i18n="cta.sub">Windows 10 / 11 · v2.9.9 · MIT License</p>
+      <p class="cta-sub" data-i18n="cta.sub">Windows 10 / 11 · v2.9.10 · MIT License</p>
       <div class="hero-cta">
         <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
           <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>
