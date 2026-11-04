@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AgentBell · 本机通知中心，让 Agent 收工有铃声</title>
-<meta name="description" data-i18n-attr="content:meta.description" content="AgentBell 是一个只做提醒的 Windows 本机通知中心。Claude Code、Codex、Gemini CLI 等 Agent 每轮结束，屏幕角落递上一张置顶卡片；支持历史、统计、Agent 来源筛选、进行中活跃会话、回到终端与一键运行环境。">
+<meta name="description" data-i18n-attr="content:meta.description" content="AgentBell 是一个只做提醒的 Windows 本机通知中心。Claude Code、Codex、Gemini CLI 等 Agent 跑完或卡在权限确认、提问、限流时，屏幕角落递上一张置顶卡片；支持等待原因、运行时间线、只读动作、按原因/时长/项目分流规则、历史、统计与回到终端。">
 <meta name="theme-color" content="#F6F5F1">
 <meta property="og:type" content="website">
 <meta property="og:title" data-i18n-attr="content:meta.title" content="AgentBell · 本机通知中心，让 Agent 收工有铃声">
-<meta property="og:description" data-i18n-attr="content:meta.description" content="只做提醒的 Windows 本机通知中心。Agent 每轮结束递上一张置顶卡片，进行中页还会自动汇集最近活跃的 Agent 会话。">
-<meta property="og:image" content="https://1wu-davy-2.github.io/agentbell-site/assets/screenshots/notification-center.png?v=2910">
+<meta property="og:description" data-i18n-attr="content:meta.description" content="Agent 跑完或卡在等待，都有回执。支持等待原因、运行时间线、只读动作与规则分流，只监听 127.0.0.1。">
+<meta property="og:image" content="https://1wu-davy-2.github.io/agentbell-site/assets/screenshots/notification-center.png?v=2130">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/icon-256.png">
-<link rel="preload" as="image" href="assets/screenshots/notification-center.png?v=2910">
+<link rel="preload" as="image" href="assets/screenshots/notification-center.png?v=2130">
 <link rel="stylesheet" href="assets/site.css">
 <script>
 document.documentElement.classList.add('js');
@@ -65,7 +65,7 @@ try {
       <div class="hero-copy">
         <p class="eyebrow reveal" data-i18n="hero.eyebrow">本机通知中心 · WINDOWS DESKTOP</p>
         <h1 class="reveal delay-1" data-i18n-html="hero.title">Agent 收工，<br><em>铃声替你回头。</em></h1>
-        <p class="hero-lead reveal delay-2" data-i18n="hero.lead">一个只做提醒的本地通知中心。Claude Code、Codex、Gemini CLI 跑完一轮，屏幕角落递上一张置顶卡片——不用切回终端，也不会错过最后一条结果。</p>
+        <p class="hero-lead reveal delay-2" data-i18n="hero.lead">一个只做提醒的本地通知中心。Claude Code、Codex、Gemini CLI 跑完一轮，或卡在权限确认、提问与限流时，屏幕角落递上一张置顶卡片——还能回看运行时间线、打开会话记录，按原因与项目分流。</p>
         <div class="hero-cta reveal delay-3">
           <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
             <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>
@@ -76,7 +76,7 @@ try {
             <span class="arrow">↗</span>
           </a>
         </div>
-        <p class="hero-note reveal delay-4"><span class="ver">v2.9.10</span><span class="dot-sep"></span><span data-i18n="hero.note">免安装单文件 · 约 58 MB · 只监听 127.0.0.1</span></p>
+        <p class="hero-note reveal delay-4"><span class="ver">v2.13.0</span><span class="dot-sep"></span><span data-i18n="hero.note">免安装单文件 · 约 58 MB · 只监听 127.0.0.1</span></p>
       </div>
 
       <div class="hero-stage reveal delay-2" aria-label="AgentBell 通知中心界面预览" data-i18n-aria="a11y.preview">
@@ -88,18 +88,18 @@ try {
             <span class="device-title" data-i18n="hero.device">AgentBell · 通知中心</span>
             <span class="device-port">:8765</span>
           </div>
-          <img class="device-shot" src="assets/screenshots/notification-center.png?v=2910" width="1120" height="760" alt="AgentBell 通知中心：进行中页自动显示活跃会话，左侧按状态与来源筛选" data-i18n-attr="alt:hero.deviceAlt">
+          <img class="device-shot" src="assets/screenshots/notification-center.png?v=2130" width="1120" height="760" alt="AgentBell 通知中心：等待权限确认、等待回答与等待限流同时显示，左侧可按状态与来源筛选" data-i18n-attr="alt:hero.deviceAlt">
         </div>
         <div class="float-card float-toast">
           <div class="float-head">
             <span class="float-bell" aria-hidden="true"><img src="assets/mark.svg" alt=""></span>
             <span class="float-agent" data-i18n="hero.float.agent">Claude Code</span>
-            <span class="float-status"><i></i><span data-i18n="hero.float.status">已完成</span></span>
+            <span class="float-status wait"><i></i><span data-i18n="hero.float.status">等待输入</span></span>
           </div>
-          <p class="float-title" data-i18n="hero.float.title">周报已生成</p>
+          <p class="float-title" data-i18n="hero.float.title">需要批准：npm install</p>
           <div class="float-foot">
-            <span data-i18n="hero.float.meta">12 页 · 8m30s</span>
-            <span class="float-action" data-i18n="hero.float.action">回到终端</span>
+            <span data-i18n="hero.float.meta">权限确认 · 2m</span>
+            <span class="float-action" data-i18n="hero.float.action">查看记录</span>
           </div>
         </div>
         <div class="float-card float-signal" aria-hidden="true">
@@ -150,6 +150,14 @@ try {
           </div>
           <span class="principle-mark" aria-hidden="true">→</span>
         </article>
+        <article class="principle" data-reveal>
+          <span class="principle-no">04</span>
+          <div class="principle-body">
+            <h3 data-i18n="why.4.title">卡住时也有回执</h3>
+            <p data-i18n="why.4.body">等待权限、回答或限流不再是沉默。卡片写明等待原因，运行时间线记下开始、等待、继续与完成；需要你处理的，才升级打扰。</p>
+          </div>
+          <span class="principle-mark" aria-hidden="true">◔</span>
+        </article>
       </div>
     </div>
   </section>
@@ -161,7 +169,7 @@ try {
           <p class="label" data-i18n="features.label">02 / 能力</p>
           <h2 class="section-title" data-i18n-html="features.title">小工具，<br>该有的都有。</h2>
         </div>
-        <p class="section-lead right" data-i18n="features.lead">不做编排、不代理模型、不上传数据。只把通知、历史和回到现场做到顺手。</p>
+        <p class="section-lead right" data-i18n="features.lead">不做编排、不代理模型、不上传数据。通知、等待、时间线与规则分流，都在本机完成。</p>
       </div>
 
       <div class="bento">
@@ -230,6 +238,33 @@ try {
           <p data-i18n="feature.local.body">HTTP 只绑 127.0.0.1，历史落在本机 SQLite，无账号、无遥测。</p>
           <div class="local-ip" aria-hidden="true">127.0.0.1<span>LOOPBACK</span></div>
         </article>
+
+        <article class="card card-g" data-reveal>
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 3h10M7 21h10M8 3v3.5l4 3 4-3V3M8 21v-3.5l4-3 4 3V21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 data-i18n="feature.wait.title">等待提醒</h3>
+          <p data-i18n="feature.wait.body">权限确认、提问、限流与上下文超限都会写明原因；会话尾部推断带「推断」标记，「进行中」可只看待输入。</p>
+          <div class="wait-pills" aria-hidden="true"><span data-i18n="feature.wait.pill1">等待权限确认</span><span data-i18n="feature.wait.pill2">等待回答</span><span data-i18n="feature.wait.pill3">等待限流恢复</span></div>
+        </article>
+
+        <article class="card card-h" data-reveal>
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="5" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="19" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 12h4m2 0h4M12 5v3M12 16v3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <h3 data-i18n="feature.timeline.title">时间线与只读动作</h3>
+          <p data-i18n="feature.timeline.body">开始、等待、继续、完成串成一次运行；卡片上的「查看记录」「时间线」只读跳转，不执行命令。</p>
+          <div class="timeline-mini" aria-hidden="true"><span data-i18n="feature.timeline.step1">开始</span><i></i><span data-i18n="feature.timeline.step2">等待</span><i></i><span data-i18n="feature.timeline.step3">继续</span><i></i><span data-i18n="feature.timeline.step4">完成</span></div>
+        </article>
+
+        <article class="card card-i" data-reveal>
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 7h10M18 7h2M4 17h3M11 17h9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="16" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+          <h3 data-i18n="feature.rules.title">规则分流</h3>
+          <p data-i18n="feature.rules.body">按等待原因、needs_input、时长与项目匹配，覆盖优先级、确认与通知通道；规则保存即生效。</p>
+          <div class="rule-mini" aria-hidden="true"><code>permission</code><code>demo-api</code><span>→ critical</span></div>
+        </article>
       </div>
     </div>
   </section>
@@ -253,12 +288,12 @@ try {
       <div class="shot-stage">
         <div class="shot-glow" aria-hidden="true"></div>
         <div class="shot-panel is-active" id="panel-center" role="tabpanel" aria-labelledby="tab-center">
-          <div class="shot-frame"><img src="assets/screenshots/notification-center.png?v=2910" width="1120" height="760" alt="通知中心：进行中页的活跃会话" loading="lazy" data-i18n-attr="alt:screens.alt.center"></div>
-          <div class="shot-caption"><span class="shot-no">01</span><p data-i18n="screens.center.caption">状态、Agent 来源与搜索叠加筛选；活跃会话自动汇入「进行中」，回到终端就在卡片上。</p></div>
+          <div class="shot-frame"><img src="assets/screenshots/notification-center.png?v=2130" width="1120" height="760" alt="通知中心：等待权限确认、等待回答与等待限流" loading="lazy" data-i18n-attr="alt:screens.alt.center"></div>
+          <div class="shot-caption"><span class="shot-no">01</span><p data-i18n="screens.center.caption">等待原因直接写在卡片上；状态、Agent 来源与搜索叠加筛选，待输入会话一眼可见。</p></div>
         </div>
         <div class="shot-panel" id="panel-stats" role="tabpanel" aria-labelledby="tab-stats" hidden>
-          <div class="shot-frame"><img src="assets/screenshots/statistics.png" width="1120" height="760" alt="数据统计界面" loading="lazy" data-i18n-attr="alt:screens.alt.stats"></div>
-          <div class="shot-caption"><span class="shot-no">02</span><p data-i18n="screens.stats.caption">完成率、平均耗时与 7 天趋势，数据来自本机历史。</p></div>
+          <div class="shot-frame"><img src="assets/screenshots/statistics.png?v=2130" width="1120" height="760" alt="数据统计界面" loading="lazy" data-i18n-attr="alt:screens.alt.stats"></div>
+          <div class="shot-caption"><span class="shot-no">02</span><p data-i18n="screens.stats.caption">完成率、平均耗时与 7 天趋势；运行时间线另附运行成功率、P50/P90 与累计等待。</p></div>
         </div>
         <div class="shot-panel" id="panel-launcher" role="tabpanel" aria-labelledby="tab-launcher" hidden>
           <div class="shot-frame"><img src="assets/screenshots/agent-launcher.png" width="1120" height="760" alt="Agent 启动界面" loading="lazy" data-i18n-attr="alt:screens.alt.launcher"></div>
@@ -282,48 +317,77 @@ try {
       <div class="section-head split">
         <div>
           <p class="label" data-i18n="updates.label">04 / 更新</p>
-          <h2 class="section-title" data-i18n-html="updates.title">最近几次更新，<br>都修在等待上。</h2>
+          <h2 class="section-title" data-i18n-html="updates.title">最近四个版本，<br>都在补等待。</h2>
         </div>
-        <p class="section-lead right" data-i18n="updates.lead">从筛选、来源识别到「进行中」，最近几个版本把最常见的打断补上了。</p>
+        <p class="section-lead right" data-i18n="updates.lead">从等待原因、运行时间线到只读动作与规则分流，2.10–2.13 把「Agent 在等什么」讲清楚。</p>
       </div>
       <div class="release-list">
+        <article class="release" data-reveal>
+          <span class="release-ver">v2.13.0</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2130.title">规则按原因、时长与项目分流</h3>
+            <p data-i18n="updates.2130.body">rules 新增等待原因、needs_input、最短/最长时长与项目条件；等待权限、来自某个项目或超过 10 分钟的任务，可以自动提高优先级、要求确认并转入指定通道。保存设置立即生效，本地推断的等待通知同样参与匹配。</p>
+          </div>
+          <span class="release-flag" data-i18n="updates.latest">最新</span>
+        </article>
+        <article class="release" data-reveal>
+          <span class="release-ver">v2.12.0</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2120.title">「查看记录」与「时间线」只读动作</h3>
+            <p data-i18n="updates.2120.body">通知可以声明 session 与 timeline 动作，弹窗与通知中心直接打开本地会话或本次运行。两类动作只读通知自身的 session_id / run_id，忽略外部参数，不执行命令，也不提供批准权限。</p>
+          </div>
+        </article>
+        <article class="release" data-reveal>
+          <span class="release-ver">v2.11.0</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2110.title">把一次运行串成时间线</h3>
+            <p data-i18n="updates.2110.body">同一 run_id 的开始、等待、继续与完成写入只追加的 run_events；卡片可回看阶段与耗时，统计页新增运行数、运行成功率、P50/P90 耗时与累计等待。</p>
+          </div>
+        </article>
+        <article class="release" data-reveal>
+          <span class="release-ver">v2.10.0</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2100.title">等待输入也有明确原因</h3>
+            <p data-i18n="updates.2100.body">权限确认、提问、限流与上下文超限会标在卡片上，「进行中」可只看待输入。支持 /notify 显式上报，也能从 Claude Code / Qoder 会话尾部本地只读推断，推断结果带标记。</p>
+          </div>
+        </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.9.10</span>
           <div class="release-body">
             <h3 data-i18n="updates.2910.title">首次运行就备好更新</h3>
             <p data-i18n="updates.2910.body">生成的 config.json 默认填入 1wu-davy-2/AgentBell 并保持启动检查，下载后约 9 秒就会查询 Releases；从旧版本升级且仓库为空的配置不会被覆盖。</p>
           </div>
-          <span class="release-flag" data-i18n="updates.latest">最新</span>
-        </article>
-        <article class="release" data-reveal>
-          <span class="release-ver">v2.9.9</span>
-          <div class="release-body">
-            <h3 data-i18n="updates.299.title">「进行中」自动汇集活跃会话</h3>
-            <p data-i18n="updates.299.body">扫描结果里最近两个周期内仍有写入的会话，会以只读卡片出现在「进行中」，标注 Agent、项目、最近活动与记录数；随来源筛选与搜索收窄，不计入「全部」。</p>
-          </div>
-        </article>
-        <article class="release" data-reveal>
-          <span class="release-ver">v2.9.8</span>
-          <div class="release-body">
-            <h3 data-i18n="updates.298.title">Agent 来源筛选与更新检查</h3>
-            <p data-i18n="updates.298.body">来源 Agent 移到标题行，通知中心新增来源下拉，可与状态、搜索叠加；更新设置支持填写仓库，并在启动约 9 秒后检查新版本。</p>
-          </div>
-        </article>
-        <article class="release" data-reveal>
-          <span class="release-ver">v2.9.7</span>
-          <div class="release-body">
-            <h3 data-i18n="updates.297.title">「回到终端」真正拿到键盘焦点</h3>
-            <p data-i18n="updates.297.body">Windows 前台锁拒绝普通置前时，依次尝试附加输入队列与 SwitchToThisWindow，仍失败才提示；只在用户点击后触发。</p>
-          </div>
-        </article>
-        <article class="release" data-reveal>
-          <span class="release-ver">v2.9.5–2.9.6</span>
-          <div class="release-body">
-            <h3 data-i18n="updates.295.title">筛选不再假死，来源自动识别</h3>
-            <p data-i18n="updates.295.body">切换状态筛选不再卡住约 10 秒；通知没填 origin 或 source 时，按本机连接反查发送进程并补出来源。</p>
-          </div>
         </article>
       </div>
+      <div class="poster-shelf" data-reveal>
+        <div class="poster-label">
+          <span>POSTERS</span>
+          <em data-i18n="posters.count">2.13.0 / 2 张</em>
+        </div>
+        <div class="poster-body">
+          <div class="poster-head">
+            <p data-i18n="posters.lead">为 2.13.0 画的两张宣传海报，点击看大图。</p>
+            <span class="poster-size-total">1080 × 1440 / PNG</span>
+          </div>
+          <div class="poster-grid">
+            <a class="poster-card" href="assets/posters/agentbell-2130-receipt.png" target="_blank" rel="noopener">
+              <span class="poster-art">
+                <img src="assets/posters/agentbell-2130-receipt-thumb.png" width="540" height="720" loading="lazy" alt="AgentBell 2.13.0 海报：等待，也有回执。" data-i18n-attr="alt:posters.alt.a">
+                <span class="poster-open" aria-hidden="true">↗</span>
+              </span>
+              <span class="poster-meta"><b>01</b><span data-i18n="posters.a">等待，也有回执。</span><i>PNG</i></span>
+            </a>
+            <a class="poster-card" href="assets/posters/agentbell-2130-waiting-room.png" target="_blank" rel="noopener">
+              <span class="poster-art">
+                <img src="assets/posters/agentbell-2130-waiting-room-thumb.png" width="540" height="720" loading="lazy" alt="AgentBell 2.13.0 海报：Agent 在等，你不必。" data-i18n-attr="alt:posters.alt.b">
+                <span class="poster-open" aria-hidden="true">↗</span>
+              </span>
+              <span class="poster-meta"><b>02</b><span data-i18n="posters.b">Agent 在等，你不必。</span><i>PNG</i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div class="release-more">
         <a class="btn btn-ghost" href="https://github.com/1wu-davy-2/AgentBell/releases" target="_blank" rel="noopener">
           <span data-i18n="updates.more">查看全部发布记录</span>
@@ -364,13 +428,16 @@ try {
   -H <span class="tok-str">"Content-Type: application/json; charset=utf-8"</span> \
   -H <span class="tok-str">"X-Token: your-token"</span> \
   -d <span class="tok-str">'{
-    "title": "周报已生成",
-    "status": "succeeded",
-    "summary": "12 页 · 8m30s",
+    "title": "需要批准：安装依赖",
+    "status": "running",
+    "summary": "npm install 请求写入 node_modules",
     "source": "Claude Code",
+    "needs_input": true,
+    "wait_reason": "permission",
+    "run_id": "run-20261104-01",
     "origin": {"pid": 12345}
   }'</span></code></pre>
-        <p class="code-note" data-i18n="start.terminal.note">Agent 也可以发送 origin.pid 等字段，换来回终端按钮。</p>
+        <p class="code-note" data-i18n="start.terminal.note">wait_reason 驱动等待提醒，run_id 与 phase 串起时间线；origin.pid 换来回终端按钮。</p>
       </div>
     </div>
   </section>
@@ -446,6 +513,18 @@ try {
           <p data-i18n="faq.a7">会话扫描发现最近两个扫描周期（默认 240 秒）内仍有写入的会话，就会以只读卡片出现在「进行中」，方便知道哪些 Agent 还在跑。它不写入历史、不计入「全部」，扫描关闭时自动隐藏。</p>
         </details>
         <details data-reveal>
+          <summary><span data-i18n="faq.q8">等待提醒是自动识别的吗？</span><i aria-hidden="true"></i></summary>
+          <p data-i18n="faq.a8">两条路都支持：Agent 可以通过 /notify 显式上报 needs_input 与 wait_reason；开启会话扫描时，也会从 Claude Code / Qoder 会话尾部做本地只读推断。推断结果带「推断」标记，只读取本机记录，不写会话文件。</p>
+        </details>
+        <details data-reveal>
+          <summary><span data-i18n="faq.q9">规则可以怎么分流？</span><i aria-hidden="true"></i></summary>
+          <p data-i18n="faq.a9">可按等待原因、needs_input、时长范围与项目匹配，覆盖优先级、是否要求确认、是否绕过免打扰、弹窗模式与外部通道。项目取工作目录末级并忽略大小写；后匹配的规则覆盖标量字段，通道累加，保存设置立即生效。</p>
+        </details>
+        <details data-reveal>
+          <summary><span data-i18n="faq.q10">「查看记录」「时间线」会执行命令吗？</span><i aria-hidden="true"></i></summary>
+          <p data-i18n="faq.a10">不会。两类动作只读取通知自身的 session_id 或 run_id，在本机打开会话记录或运行时间线；忽略外部参数，不调用 shell，也不提供批准、自动继续或发送提示词的能力。</p>
+        </details>
+        <details data-reveal>
           <summary><span data-i18n="faq.q6">为什么没有网页版？</span><i aria-hidden="true"></i></summary>
           <p data-i18n="faq.a6">AgentBell 刻意做成原生 PySide6 窗口：更贴近桌面、更低打扰，也不需要你常驻一个浏览器标签页。</p>
         </details>
@@ -457,7 +536,7 @@ try {
     <div class="cta-beacon" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="wrap cta-inner">
       <h2 data-i18n-html="cta.title">下一次 Agent 收工，<br><em>让铃声替你看。</em></h2>
-      <p class="cta-sub" data-i18n="cta.sub">Windows 10 / 11 · v2.9.10 · MIT License</p>
+      <p class="cta-sub" data-i18n="cta.sub">Windows 10 / 11 · v2.13.0 · MIT License</p>
       <div class="hero-cta">
         <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
           <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>
