@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AgentBell · 本机通知中心，让 Agent 收工有铃声</title>
-<meta name="description" data-i18n-attr="content:meta.description" content="AgentBell 是一个只做提醒的 Windows / Linux 本机桌面通知中心。Claude Code、Codex、Gemini CLI 等 Agent 跑完或卡在权限确认、提问、限流时，屏幕角落递上一张置顶卡片；X11 下还有全局快捷键、回到终端、全屏与空闲检测、托盘；支持等待原因、运行时间线、只读动作、按原因/时长/项目分流规则、历史与统计，只监听 127.0.0.1。">
+<meta name="description" data-i18n-attr="content:meta.description" content="AgentBell 是一个只做提醒的 Windows / macOS / Linux 本机桌面通知中心。Claude Code、Codex、Gemini CLI 等 Agent 跑完或卡在权限确认、提问、限流时，屏幕角落递上一张置顶卡片；X11 下还有全局快捷键、回到终端、全屏与空闲检测、托盘；支持等待原因、运行时间线、只读动作、按原因/时长/项目分流规则、历史与统计，只监听 127.0.0.1。">
 <meta name="theme-color" content="#F6F5F1">
 <meta property="og:type" content="website">
 <meta property="og:title" data-i18n-attr="content:meta.title" content="AgentBell · 本机通知中心，让 Agent 收工有铃声">
 <meta property="og:description" data-i18n-attr="content:meta.description" content="Agent 跑完或卡在等待，都有回执。支持等待原因、运行时间线、只读动作与规则分流，只监听 127.0.0.1。">
-<meta property="og:image" content="https://1wu-davy-2.github.io/agentbell-site/assets/screenshots/notification-center.png?v=2161">
+<meta property="og:image" content="https://1wu-davy-2.github.io/agentbell-site/assets/screenshots/notification-center.png?v=2180">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/icon-256.png">
-<link rel="preload" as="image" href="assets/screenshots/notification-center.png?v=2161">
-<link rel="stylesheet" href="assets/site.css?v=2161">
+<link rel="preload" as="image" href="assets/screenshots/notification-center.png?v=2180">
+<link rel="stylesheet" href="assets/site.css?v=2180">
 <script>
 document.documentElement.classList.add('js');
 try {
@@ -63,20 +63,20 @@ try {
     <div class="hero-grid-bg" aria-hidden="true"></div>
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow reveal" data-i18n="hero.eyebrow">本机通知中心 · WINDOWS / LINUX</p>
+        <p class="eyebrow reveal" data-i18n="hero.eyebrow">本机通知中心 · WINDOWS / MACOS / LINUX</p>
         <h1 class="reveal delay-1" data-i18n-html="hero.title">Agent 收工，<br><em>铃声替你回头。</em></h1>
         <p class="hero-lead reveal delay-2" data-i18n="hero.lead">一个只做提醒的本地通知中心。Claude Code、Codex、Gemini CLI 跑完一轮，或卡在权限确认、提问与限流时，屏幕角落递上一张置顶卡片——还能回看运行时间线、打开会话记录，按原因与项目分流。</p>
         <div class="hero-cta reveal delay-3">
           <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
             <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>
-            <span data-i18n="hero.cta">下载 Windows / Linux 版</span>
+            <span data-i18n="hero.cta">下载 Windows / macOS / Linux 版</span>
           </a>
           <a class="btn btn-ghost btn-lg" href="https://github.com/1wu-davy-2/AgentBell" target="_blank" rel="noopener">
             <span data-i18n="hero.gh">查看 GitHub</span>
             <span class="arrow">↗</span>
           </a>
         </div>
-        <p class="hero-note reveal delay-4"><span class="ver">v2.16.1</span><span class="dot-sep"></span><span data-i18n="hero.note">免安装单文件 · Windows x64 · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
+        <p class="hero-note reveal delay-4"><span class="ver">v2.18.0</span><span class="dot-sep"></span><span data-i18n="hero.note">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
       </div>
 
       <div class="hero-stage reveal delay-2" aria-label="AgentBell 通知中心界面预览" data-i18n-aria="a11y.preview">
@@ -88,7 +88,7 @@ try {
             <span class="device-title" data-i18n="hero.device">AgentBell · 通知中心</span>
             <span class="device-port">:8765</span>
           </div>
-          <img class="device-shot" src="assets/screenshots/notification-center.png?v=2161" width="1120" height="760" alt="AgentBell 通知中心：等待权限确认、等待回答与等待限流同时显示，左侧可按状态与来源筛选" data-i18n-attr="alt:hero.deviceAlt">
+          <img class="device-shot" src="assets/screenshots/notification-center.png?v=2180" width="1120" height="760" alt="AgentBell 通知中心：等待权限确认、等待回答与等待限流同时显示，左侧可按状态与来源筛选" data-i18n-attr="alt:hero.deviceAlt">
         </div>
         <div class="float-card float-toast">
           <div class="float-head">
@@ -288,11 +288,11 @@ try {
       <div class="shot-stage">
         <div class="shot-glow" aria-hidden="true"></div>
         <div class="shot-panel is-active" id="panel-center" role="tabpanel" aria-labelledby="tab-center">
-          <div class="shot-frame"><img src="assets/screenshots/notification-center.png?v=2161" width="1120" height="760" alt="通知中心：等待权限确认、等待回答与等待限流" loading="lazy" data-i18n-attr="alt:screens.alt.center"></div>
+          <div class="shot-frame"><img src="assets/screenshots/notification-center.png?v=2180" width="1120" height="760" alt="通知中心：等待权限确认、等待回答与等待限流" loading="lazy" data-i18n-attr="alt:screens.alt.center"></div>
           <div class="shot-caption"><span class="shot-no">01</span><p data-i18n="screens.center.caption">等待原因直接写在卡片上；状态、Agent 来源与搜索叠加筛选，待输入会话一眼可见。</p></div>
         </div>
         <div class="shot-panel" id="panel-stats" role="tabpanel" aria-labelledby="tab-stats" hidden>
-          <div class="shot-frame"><img src="assets/screenshots/statistics.png?v=2161" width="1120" height="760" alt="数据统计界面" loading="lazy" data-i18n-attr="alt:screens.alt.stats"></div>
+          <div class="shot-frame"><img src="assets/screenshots/statistics.png?v=2180" width="1120" height="760" alt="数据统计界面" loading="lazy" data-i18n-attr="alt:screens.alt.stats"></div>
           <div class="shot-caption"><span class="shot-no">02</span><p data-i18n="screens.stats.caption">完成率、平均耗时与 7 天趋势；运行时间线另附运行成功率、P50/P90 与累计等待。</p></div>
         </div>
         <div class="shot-panel" id="panel-launcher" role="tabpanel" aria-labelledby="tab-launcher" hidden>
@@ -317,18 +317,32 @@ try {
       <div class="section-head split">
         <div>
           <p class="label" data-i18n="updates.label">04 / 更新</p>
-          <h2 class="section-title" data-i18n-html="updates.title">最近四个版本，<br>从等待走到 Linux。</h2>
+          <h2 class="section-title" data-i18n-html="updates.title">最近六个版本，<br>从等待走到三个平台。</h2>
         </div>
-        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Agent Hook，2.15 收好多屏卡片，2.16 把同一套提醒带到 Linux。</p>
+        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Hook，2.15 收好多屏卡片，2.16 把提醒带到 Linux，2.17 补齐四种安装包，2.18 扩到 Windows ARM64 与 macOS。</p>
       </div>
       <div class="release-list">
+        <article class="release" data-reveal>
+          <span class="release-ver">v2.18.0</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2180.title">Windows ARM64 与 macOS 版</h3>
+            <p data-i18n="updates.2180.body">Windows 新增原生 Arm64 构建 AgentBell-arm64.exe 与 x64 的 AgentBell.exe 并列发布，更新器按当前架构选包，绝不交叉替换。macOS 提供 Intel / Apple Silicon 的 dmg 与 zip，配置、日志与数据库写入 ~/Library/Application Support/AgentBell，应用包保持只读。macOS 版保留托盘、弹窗、通知中心、历史、提示音与 Hook，暂不支持全局快捷键、回到终端、空闲 / 全屏推断、便携 Node 与原地更新；发现新版本会打开 Release 页面。Linux 同步补上提示音与端口占用提示。</p>
+          </div>
+          <span class="release-flag" data-i18n="updates.latest">最新</span>
+        </article>
+        <article class="release" data-reveal>
+          <span class="release-ver">v2.17.1</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2171.title">Linux 四种安装包</h3>
+            <p data-i18n="updates.2171.body">x64 与 arm64 现在都提供 tar.gz、AppImage、deb 与 rpm：tar.gz 解压即用并保留原地自动更新，AppImage chmod +x 后直接运行，deb / rpm 可交给系统包管理器安装与卸载。四种格式由同一条 CI 流水线构建并附 SHA-256 校验；AppImage 与系统包安装不再尝试原地替换，更新时下载新包或用包管理器升级。2.17.0 标签因 CI 未通过没有发布，2.17.1 修复 AppImage 工具路径与测试时序边界，功能与 2.17.0 相同。</p>
+          </div>
+        </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.16.1</span>
           <div class="release-body">
             <h3 data-i18n="updates.2161.title">Linux x64 / arm64 通用版</h3>
             <p data-i18n="updates.2161.body">新增 Linux x64 与 arm64 通用版，下载 AgentBell-linux-x64.tar.gz 或 AgentBell-linux-arm64.tar.gz，解压后直接运行 ./AgentBell，无需安装 Python 或 Qt。X11 会话支持全局快捷键、回到终端与窗口聚焦、全屏与会议检测、锁屏/空闲检测、托盘、Agent 终端启动与 Hook 接入；Wayland 下仍可弹窗、通知中心与托盘，但全局快捷键、窗口聚焦、全屏/空闲检测会降级并提示。2.16.1 修复了 Linux 测试与跨平台路径解析，功能与 2.16.0 相同。</p>
           </div>
-          <span class="release-flag" data-i18n="updates.latest">最新</span>
         </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.15.0</span>
@@ -398,7 +412,7 @@ try {
         <ol class="steps">
           <li data-reveal>
             <span class="step-no">01</span>
-            <div><h3 data-i18n="start.step1.title">下载并运行</h3><p data-i18n="start.step1.body">Windows 下载 AgentBell.exe，放进任意可写目录双击运行，SmartScreen 提示时选择「更多信息 → 仍要运行」；Linux 下载对应架构的 AgentBell-linux-x64.tar.gz 或 arm64 包，解压后运行 ./AgentBell。</p></div>
+            <div><h3 data-i18n="start.step1.title">下载并运行</h3><p data-i18n="start.step1.body">Windows 下载 AgentBell.exe（x64）或 AgentBell-arm64.exe，放进任意可写目录双击运行，SmartScreen 提示时选择「更多信息 → 仍要运行」；macOS 下载对应架构的 dmg，把 AgentBell.app 拖进「应用程序」，首次启动右键选择「打开」；Linux 可选 tar.gz（解压后运行 ./AgentBell）、AppImage（chmod +x 后直接运行）或 deb / rpm（交给 apt / dnf 安装），每种架构都有对应包。</p></div>
           </li>
           <li data-reveal>
             <span class="step-no">02</span>
@@ -440,7 +454,7 @@ try {
       <div class="runtime-copy">
         <p class="label" data-i18n="runtime.label">06 / 运行环境</p>
         <h2 class="section-title" data-i18n-html="runtime.title">Node 这件事，<br>也替你做完了。</h2>
-        <p class="section-lead" data-i18n="runtime.lead">普通用户不用自己准备 Node。在「运行环境」页点一次，官方 Node LTS 与 7 个 Agent CLI 就装进安装目录的 runtime/；Linux 版同样通过 tar.xz 安装这套运行时，目录布局与 Windows 一致。</p>
+        <p class="section-lead" data-i18n="runtime.lead">普通用户不用自己准备 Node。在「运行环境」页点一次，官方 Node LTS 与 7 个 Agent CLI 就装进安装目录的 runtime/；Linux 版同样通过 tar.xz 安装这套运行时，目录布局与 Windows 一致。macOS 版不提供便携运行时，直接使用系统已安装的 Agent。</p>
         <ul class="runtime-list">
           <li><span class="rt-key">Node</span><span data-i18n="runtime.node">官方 LTS 便携包 · SHASUMS256 校验</span></li>
           <li><span class="rt-key">CLI ×7</span><span data-i18n="runtime.agents">7 个官方 npm CLI · 装进 runtime/agents</span></li>
@@ -495,11 +509,11 @@ try {
         </details>
         <details data-reveal>
           <summary><span data-i18n="faq.q4">支持哪些系统？</span><i aria-hidden="true"></i></summary>
-          <p data-i18n="faq.a4">支持 Windows 10 / 11 与 Linux x64 / arm64。Linux 用通用版 tar.gz，解压即运行；X11 会话完整支持全局快捷键、回到终端、全屏/空闲检测、托盘与 Hook，Wayland 降级为基础提醒（弹窗、通知中心与托盘）。macOS 暂不支持。</p>
+          <p data-i18n="faq.a4">支持 Windows x64 / arm64、macOS 14+（Intel / Apple Silicon）与 Linux x64 / arm64。Windows 提供完整功能，arm64 使用独立安装包；macOS 保留托盘、弹窗、通知中心、历史、提示音与 Hook，暂不支持全局快捷键、回到终端、空闲/全屏检测、便携运行时与原地更新；Linux 提供 tar.gz、AppImage、deb 与 rpm 四种格式，X11 会话完整支持全局快捷键、回到终端、全屏/空闲检测、托盘与 Hook，Wayland 降级为基础提醒。</p>
         </details>
         <details data-reveal>
           <summary><span data-i18n="faq.q5">怎么更新？</span><i aria-hidden="true"></i></summary>
-          <p data-i18n="faq.a5">首次运行生成的 config.json 已预填更新仓库 1wu-davy-2/AgentBell，并默认勾选启动检查；启动约 9 秒自动检查，托盘与设置页也可手动检查。更新包只从 GitHub HTTPS 下载，校验大小与 SHA-256，退出时替换、备份并重启。源码模式只下载安装包，不替换正在运行的 Python 进程。</p>
+          <p data-i18n="faq.a5">首次运行生成的 config.json 已预填更新仓库 1wu-davy-2/AgentBell，并默认勾选启动检查；启动约 9 秒自动检查，托盘与设置页也可手动检查。更新包只从 GitHub HTTPS 下载，校验大小与 SHA-256，退出时替换、备份并重启；AppImage 与 deb / rpm 安装不支持原地替换，请下载新包或用 apt / dnf 升级。源码模式只下载安装包，不替换正在运行的 Python 进程。</p>
         </details>
         <details data-reveal>
           <summary><span data-i18n="faq.q7">「进行中」里的活跃会话是什么？</span><i aria-hidden="true"></i></summary>
@@ -533,11 +547,11 @@ try {
     <div class="cta-beacon" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="wrap cta-inner">
       <h2 data-i18n-html="cta.title">下一次 Agent 收工，<br><em>让铃声替你看。</em></h2>
-      <p class="cta-sub" data-i18n="cta.sub">Windows 10 / 11 · Linux x64 / arm64 · v2.16.1 · MIT License</p>
+      <p class="cta-sub" data-i18n="cta.sub">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.18.0 · MIT License</p>
       <div class="hero-cta">
         <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
           <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>
-          <span data-i18n="cta.download">下载 Windows / Linux 版</span>
+          <span data-i18n="cta.download">下载 Windows / macOS / Linux 版</span>
         </a>
         <a class="btn btn-ghost btn-lg" href="https://github.com/1wu-davy-2/AgentBell" target="_blank" rel="noopener"><span data-i18n="cta.gh">在 GitHub 上查看</span><span class="arrow">↗</span></a>
       </div>
@@ -562,6 +576,6 @@ try {
 </footer>
 
 <div class="toast-copied" id="toastCopied" role="status" aria-live="polite" data-i18n="start.copied" hidden>已复制</div>
-<script src="assets/site.js?v=2161"></script>
+<script src="assets/site.js?v=2180"></script>
 </body>
 </html>
