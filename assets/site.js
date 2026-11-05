@@ -104,8 +104,10 @@
     "screens.alt.settings": "Settings",
 
     "updates.label": "04 / UPDATES",
-    "updates.title": "Seven releases,<br>from waiting to three platforms.",
-    "updates.lead": "2.13 named the wait, 2.14 wired up hooks, 2.15 tidied multi-display cards, 2.16 brought the alerts to Linux, 2.17 added AppImage, deb, and rpm, 2.18 reaches Windows ARM64 and macOS, and 2.18.1 fixes the arm64 tests.",
+    "updates.title": "Eight releases,<br>from waiting to three platforms.",
+    "updates.lead": "2.13 named the wait, 2.14 wired up hooks, 2.15 tidied multi-display cards, 2.16 brought the alerts to Linux, 2.17 added AppImage, deb, and rpm, 2.18 reaches Windows ARM64 and macOS, 2.18.1 fixes the arm64 tests, and 2.18.2 completes the checksums.",
+    "updates.2182.title": "Complete checksums",
+    "updates.2182.body": "Fixes the release checksums: the Windows x64 and arm64 packaging jobs both wrote SHA256SUMS.txt, so the merged file lost AgentBell-arm64.exe and its versioned copy. Each architecture now writes SHA256SUMS-windows-arch.txt, and the merged SHA256SUMS.txt covers all 16 downloadable assets, including Windows ARM64. Behavior matches 2.18.1.",
     "updates.2181.title": "arm64 test fixes",
     "updates.2181.body": "Fixes the tests on arm64 build hosts: updater and asset-selection cases no longer rely on the host architecture, passing machine explicitly so both x64 and arm64 selection rules are covered; the time-formatting case now converts older timestamps across DST. Behavior matches 2.18.0, which was never published because its arm64 tests failed; 2.18.1 completes the Windows x64/ARM64, macOS, and Linux dual-architecture release.",
     "updates.2180.title": "Windows ARM64 and macOS builds",
@@ -200,7 +202,7 @@
     "faq.a6": "AgentBell is deliberately a native PySide6 window: closer to the desktop, less intrusive, and no browser tab to keep around.",
 
     "cta.title": "Next time your agent clocks out,<br><em>let the bell look.</em>",
-    "cta.sub": "Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.18.1 · MIT License",
+    "cta.sub": "Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.18.2 · MIT License",
     "cta.download": "Download for Windows / macOS / Linux",
     "cta.gh": "View on GitHub",
 
