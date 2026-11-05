@@ -9,12 +9,12 @@
 <meta property="og:type" content="website">
 <meta property="og:title" data-i18n-attr="content:meta.title" content="AgentBell · 本机通知中心，让 Agent 收工有铃声">
 <meta property="og:description" data-i18n-attr="content:meta.description" content="Agent 跑完或卡在等待，都有回执。支持等待原因、运行时间线、只读动作与规则分流，只监听 127.0.0.1。">
-<meta property="og:image" content="https://1wu-davy-2.github.io/agentbell-site/assets/screenshots/notification-center.png?v=2180">
+<meta property="og:image" content="https://1wu-davy-2.github.io/agentbell-site/assets/screenshots/notification-center.png?v=2181">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/icon-256.png">
-<link rel="preload" as="image" href="assets/screenshots/notification-center.png?v=2180">
-<link rel="stylesheet" href="assets/site.css?v=2180">
+<link rel="preload" as="image" href="assets/screenshots/notification-center.png?v=2181">
+<link rel="stylesheet" href="assets/site.css?v=2181">
 <script>
 document.documentElement.classList.add('js');
 try {
@@ -76,7 +76,7 @@ try {
             <span class="arrow">↗</span>
           </a>
         </div>
-        <p class="hero-note reveal delay-4"><span class="ver">v2.18.0</span><span class="dot-sep"></span><span data-i18n="hero.note">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
+        <p class="hero-note reveal delay-4"><span class="ver">v2.18.1</span><span class="dot-sep"></span><span data-i18n="hero.note">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
       </div>
 
       <div class="hero-stage reveal delay-2" aria-label="AgentBell 通知中心界面预览" data-i18n-aria="a11y.preview">
@@ -88,7 +88,7 @@ try {
             <span class="device-title" data-i18n="hero.device">AgentBell · 通知中心</span>
             <span class="device-port">:8765</span>
           </div>
-          <img class="device-shot" src="assets/screenshots/notification-center.png?v=2180" width="1120" height="760" alt="AgentBell 通知中心：等待权限确认、等待回答与等待限流同时显示，左侧可按状态与来源筛选" data-i18n-attr="alt:hero.deviceAlt">
+          <img class="device-shot" src="assets/screenshots/notification-center.png?v=2181" width="1120" height="760" alt="AgentBell 通知中心：等待权限确认、等待回答与等待限流同时显示，左侧可按状态与来源筛选" data-i18n-attr="alt:hero.deviceAlt">
         </div>
         <div class="float-card float-toast">
           <div class="float-head">
@@ -288,11 +288,11 @@ try {
       <div class="shot-stage">
         <div class="shot-glow" aria-hidden="true"></div>
         <div class="shot-panel is-active" id="panel-center" role="tabpanel" aria-labelledby="tab-center">
-          <div class="shot-frame"><img src="assets/screenshots/notification-center.png?v=2180" width="1120" height="760" alt="通知中心：等待权限确认、等待回答与等待限流" loading="lazy" data-i18n-attr="alt:screens.alt.center"></div>
+          <div class="shot-frame"><img src="assets/screenshots/notification-center.png?v=2181" width="1120" height="760" alt="通知中心：等待权限确认、等待回答与等待限流" loading="lazy" data-i18n-attr="alt:screens.alt.center"></div>
           <div class="shot-caption"><span class="shot-no">01</span><p data-i18n="screens.center.caption">等待原因直接写在卡片上；状态、Agent 来源与搜索叠加筛选，待输入会话一眼可见。</p></div>
         </div>
         <div class="shot-panel" id="panel-stats" role="tabpanel" aria-labelledby="tab-stats" hidden>
-          <div class="shot-frame"><img src="assets/screenshots/statistics.png?v=2180" width="1120" height="760" alt="数据统计界面" loading="lazy" data-i18n-attr="alt:screens.alt.stats"></div>
+          <div class="shot-frame"><img src="assets/screenshots/statistics.png?v=2181" width="1120" height="760" alt="数据统计界面" loading="lazy" data-i18n-attr="alt:screens.alt.stats"></div>
           <div class="shot-caption"><span class="shot-no">02</span><p data-i18n="screens.stats.caption">完成率、平均耗时与 7 天趋势；运行时间线另附运行成功率、P50/P90 与累计等待。</p></div>
         </div>
         <div class="shot-panel" id="panel-launcher" role="tabpanel" aria-labelledby="tab-launcher" hidden>
@@ -317,18 +317,25 @@ try {
       <div class="section-head split">
         <div>
           <p class="label" data-i18n="updates.label">04 / 更新</p>
-          <h2 class="section-title" data-i18n-html="updates.title">最近六个版本，<br>从等待走到三个平台。</h2>
+          <h2 class="section-title" data-i18n-html="updates.title">最近七个版本，<br>从等待走到三个平台。</h2>
         </div>
-        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Hook，2.15 收好多屏卡片，2.16 把提醒带到 Linux，2.17 补齐四种安装包，2.18 扩到 Windows ARM64 与 macOS。</p>
+        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Hook，2.15 收好多屏卡片，2.16 把提醒带到 Linux，2.17 补齐四种安装包，2.18 扩到 Windows ARM64 与 macOS，2.18.1 修好 arm64 测试。</p>
       </div>
       <div class="release-list">
+        <article class="release" data-reveal>
+          <span class="release-ver">v2.18.1</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2181.title">arm64 测试修复</h3>
+            <p data-i18n="updates.2181.body">修复 arm64 构建机上的测试：更新器与资产选择用例不再依赖宿主机默认架构，统一显式传入 machine，x64 与 arm64 的选包规则都被覆盖；时间格式用例按本地时区处理跨夏令时的旧时间。功能与 2.18.0 相同，2.18.0 标签因 arm64 测试未通过而没有发布，2.18.1 补齐 Windows x64 / ARM64、macOS 与 Linux 双架构的发布。</p>
+          </div>
+          <span class="release-flag" data-i18n="updates.latest">最新</span>
+        </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.18.0</span>
           <div class="release-body">
             <h3 data-i18n="updates.2180.title">Windows ARM64 与 macOS 版</h3>
             <p data-i18n="updates.2180.body">Windows 新增原生 Arm64 构建 AgentBell-arm64.exe 与 x64 的 AgentBell.exe 并列发布，更新器按当前架构选包，绝不交叉替换。macOS 提供 Intel / Apple Silicon 的 dmg 与 zip，配置、日志与数据库写入 ~/Library/Application Support/AgentBell，应用包保持只读。macOS 版保留托盘、弹窗、通知中心、历史、提示音与 Hook，暂不支持全局快捷键、回到终端、空闲 / 全屏推断、便携 Node 与原地更新；发现新版本会打开 Release 页面。Linux 同步补上提示音与端口占用提示。</p>
           </div>
-          <span class="release-flag" data-i18n="updates.latest">最新</span>
         </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.17.1</span>
@@ -547,7 +554,7 @@ try {
     <div class="cta-beacon" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="wrap cta-inner">
       <h2 data-i18n-html="cta.title">下一次 Agent 收工，<br><em>让铃声替你看。</em></h2>
-      <p class="cta-sub" data-i18n="cta.sub">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.18.0 · MIT License</p>
+      <p class="cta-sub" data-i18n="cta.sub">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.18.1 · MIT License</p>
       <div class="hero-cta">
         <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
           <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>
@@ -576,6 +583,6 @@ try {
 </footer>
 
 <div class="toast-copied" id="toastCopied" role="status" aria-live="polite" data-i18n="start.copied" hidden>已复制</div>
-<script src="assets/site.js?v=2180"></script>
+<script src="assets/site.js?v=2181"></script>
 </body>
 </html>
