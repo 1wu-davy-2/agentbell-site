@@ -76,7 +76,7 @@ try {
             <span class="arrow">↗</span>
           </a>
         </div>
-        <p class="hero-note reveal delay-4"><span class="ver">v2.18.2</span><span class="dot-sep"></span><span data-i18n="hero.note">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
+        <p class="hero-note reveal delay-4"><span class="ver">v2.19.0</span><span class="dot-sep"></span><span data-i18n="hero.note">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
       </div>
 
       <div class="hero-stage reveal delay-2" aria-label="AgentBell 通知中心界面预览" data-i18n-aria="a11y.preview">
@@ -197,7 +197,7 @@ try {
             <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 20V10M9 20V4M14 20v-7M19 20V7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
           </span>
           <h3 data-i18n="feature.center.title">通知中心</h3>
-          <p data-i18n="feature.center.body">状态、搜索与 Agent 来源叠加筛选；近期活跃会话自动汇入「进行中」，1000 条历史附 7 天趋势。</p>
+          <p data-i18n="feature.center.body">状态、字段搜索与 Agent 来源叠加筛选；近期活跃会话自动汇入「进行中」，1000 条历史附 7 / 30 / 90 天统计、CSV 导出、批量归档与分组。</p>
           <div class="mini-bars" aria-hidden="true">
             <i style="--h:38%"></i><i style="--h:62%"></i><i style="--h:50%"></i><i style="--h:78%"></i><i style="--h:64%"></i><i style="--h:88%"></i><i class="on" style="--h:96%"></i>
           </div>
@@ -262,7 +262,7 @@ try {
             <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 7h10M18 7h2M4 17h3M11 17h9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="16" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
           </span>
           <h3 data-i18n="feature.rules.title">规则分流</h3>
-          <p data-i18n="feature.rules.body">按等待原因、needs_input、时长与项目匹配，覆盖优先级、确认与通知通道；规则保存即生效。</p>
+          <p data-i18n="feature.rules.body">按等待原因、needs_input、时长与项目匹配，覆盖优先级、确认与通知通道；规则保存即生效，试运行可查看样例通知命中的规则。</p>
           <div class="rule-mini" aria-hidden="true"><code>permission</code><code>demo-api</code><span>→ critical</span></div>
         </article>
       </div>
@@ -317,18 +317,25 @@ try {
       <div class="section-head split">
         <div>
           <p class="label" data-i18n="updates.label">04 / 更新</p>
-          <h2 class="section-title" data-i18n-html="updates.title">最近八个版本，<br>从等待走到三个平台。</h2>
+          <h2 class="section-title" data-i18n-html="updates.title">最近九个版本，<br>从等待走到三个平台。</h2>
         </div>
-        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Hook，2.15 收好多屏卡片，2.16 把提醒带到 Linux，2.17 补齐四种安装包，2.18 扩到 Windows ARM64 与 macOS，2.18.1 修好 arm64 测试，2.18.2 补全校验文件。</p>
+        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Hook，2.15 收好多屏卡片，2.16 把提醒带到 Linux，2.17 补齐四种安装包，2.18 扩到 Windows ARM64 与 macOS，2.18.1 修好 arm64 测试，2.18.2 补全校验文件，2.19 补齐会话、搜索、归档与平台签名。</p>
       </div>
       <div class="release-list">
+        <article class="release" data-reveal>
+          <span class="release-ver">v2.19.0</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2190.title">会话、搜索与平台补齐</h3>
+            <p data-i18n="updates.2190.body">会话页新增 Codex、Gemini、Grok 与 OpenCode 数据库来源，等待推断同步扩到前三者。通知搜索支持 status:、source:、priority:、session:、run:、ack: 字段过滤；统计提供 7 / 30 / 90 天区间与 CSV 导出，通知可批量归档并按日期或来源分组；托盘加入快捷勿扰，规则区加入试运行。macOS 补齐全局快捷键、回到终端、空闲 / 全屏 / 会议 / 锁屏推断、便携 Node 与 zip 原地更新；Wayland 通过 XDG 门户注册快捷键；CI 支持 Windows Authenticode 与 macOS Developer ID 签名、公证与 staple。</p>
+          </div>
+          <span class="release-flag" data-i18n="updates.latest">最新</span>
+        </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.18.2</span>
           <div class="release-body">
             <h3 data-i18n="updates.2182.title">校验文件补全</h3>
             <p data-i18n="updates.2182.body">修复 Release 校验文件：Windows x64 与 arm64 打包任务此前都输出同名 SHA256SUMS.txt，合并发布时互相覆盖，导致校验文件缺少 AgentBell-arm64.exe 与版本化副本。现在按架构输出 SHA256SUMS-windows-arch.txt，合并后的 SHA256SUMS.txt 覆盖全部 16 个可下载产物，Windows ARM64 也能校验。功能与 2.18.1 相同。</p>
           </div>
-          <span class="release-flag" data-i18n="updates.latest">最新</span>
         </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.18.1</span>
@@ -468,7 +475,7 @@ try {
       <div class="runtime-copy">
         <p class="label" data-i18n="runtime.label">06 / 运行环境</p>
         <h2 class="section-title" data-i18n-html="runtime.title">Node 这件事，<br>也替你做完了。</h2>
-        <p class="section-lead" data-i18n="runtime.lead">普通用户不用自己准备 Node。在「运行环境」页点一次，官方 Node LTS 与 7 个 Agent CLI 就装进安装目录的 runtime/；Linux 版同样通过 tar.xz 安装这套运行时，目录布局与 Windows 一致。macOS 版不提供便携运行时，直接使用系统已安装的 Agent。</p>
+        <p class="section-lead" data-i18n="runtime.lead">普通用户不用自己准备 Node。在「运行环境」页点一次，官方 Node LTS 与 7 个 Agent CLI 就装进安装目录的 runtime/；macOS 与 Linux 通过 tar.xz 安装同一套运行时，目录布局与 Windows 一致。</p>
         <ul class="runtime-list">
           <li><span class="rt-key">Node</span><span data-i18n="runtime.node">官方 LTS 便携包 · SHASUMS256 校验</span></li>
           <li><span class="rt-key">CLI ×7</span><span data-i18n="runtime.agents">7 个官方 npm CLI · 装进 runtime/agents</span></li>
@@ -523,11 +530,11 @@ try {
         </details>
         <details data-reveal>
           <summary><span data-i18n="faq.q4">支持哪些系统？</span><i aria-hidden="true"></i></summary>
-          <p data-i18n="faq.a4">支持 Windows x64 / arm64、macOS 14+（Intel / Apple Silicon）与 Linux x64 / arm64。Windows 提供完整功能，arm64 使用独立安装包；macOS 保留托盘、弹窗、通知中心、历史、提示音与 Hook，暂不支持全局快捷键、回到终端、空闲/全屏检测、便携运行时与原地更新；Linux 提供 tar.gz、AppImage、deb 与 rpm 四种格式，X11 会话完整支持全局快捷键、回到终端、全屏/空闲检测、托盘与 Hook，Wayland 降级为基础提醒。</p>
+          <p data-i18n="faq.a4">支持 Windows x64 / arm64、macOS 14+（Intel / Apple Silicon）与 Linux x64 / arm64。Windows 与 macOS 提供完整功能，包括全局快捷键、回到终端、空闲 / 全屏 / 会议 / 锁屏推断、便携 Node 与原地更新；macOS 的回到终端需要辅助功能权限。Linux 提供 tar.gz、AppImage、deb 与 rpm 四种格式，X11 会话同样支持这些桌面能力；Wayland 通过 XDG GlobalShortcuts 门户注册快捷键，但系统不允许应用主动切换窗口焦点，相关入口会给出说明。</p>
         </details>
         <details data-reveal>
           <summary><span data-i18n="faq.q5">怎么更新？</span><i aria-hidden="true"></i></summary>
-          <p data-i18n="faq.a5">首次运行生成的 config.json 已预填更新仓库 1wu-davy-2/AgentBell，并默认勾选启动检查；启动约 9 秒自动检查，托盘与设置页也可手动检查。更新包只从 GitHub HTTPS 下载，校验大小与 SHA-256，退出时替换、备份并重启；AppImage 与 deb / rpm 安装不支持原地替换，请下载新包或用 apt / dnf 升级。源码模式只下载安装包，不替换正在运行的 Python 进程。</p>
+          <p data-i18n="faq.a5">首次运行生成的 config.json 已预填更新仓库 1wu-davy-2/AgentBell，并默认勾选启动检查；启动约 9 秒自动检查，托盘与设置页也可手动检查。更新包只从 GitHub HTTPS 下载，校验大小与 SHA-256，退出时替换、备份并重启；Windows、macOS 与 Linux 便携版都支持原地更新，macOS 使用 zip 包。AppImage 与 deb / rpm 安装不支持原地替换，请下载新包或用 apt / dnf 升级。源码模式只下载安装包，不替换正在运行的 Python 进程。</p>
         </details>
         <details data-reveal>
           <summary><span data-i18n="faq.q7">「进行中」里的活跃会话是什么？</span><i aria-hidden="true"></i></summary>
@@ -535,7 +542,7 @@ try {
         </details>
         <details data-reveal>
           <summary><span data-i18n="faq.q8">等待提醒是自动识别的吗？</span><i aria-hidden="true"></i></summary>
-          <p data-i18n="faq.a8">两条路都支持：Agent 可以通过 /notify 显式上报 needs_input 与 wait_reason；开启会话扫描时，也会从 Claude Code / Qoder 会话尾部做本地只读推断。推断结果带「推断」标记，只读取本机记录，不写会话文件。</p>
+          <p data-i18n="faq.a8">两条路都支持：Agent 可以通过 /notify 显式上报 needs_input 与 wait_reason；开启会话扫描时，也会从 Claude Code、Qoder、Codex、Gemini 与 Grok 的会话尾部做本地只读推断。推断结果带「推断」标记，只读取本机记录，不写会话文件。</p>
         </details>
         <details data-reveal>
           <summary><span data-i18n="faq.q9">规则可以怎么分流？</span><i aria-hidden="true"></i></summary>
@@ -561,7 +568,7 @@ try {
     <div class="cta-beacon" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="wrap cta-inner">
       <h2 data-i18n-html="cta.title">下一次 Agent 收工，<br><em>让铃声替你看。</em></h2>
-      <p class="cta-sub" data-i18n="cta.sub">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.18.2 · MIT License</p>
+      <p class="cta-sub" data-i18n="cta.sub">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.19.0 · MIT License</p>
       <div class="hero-cta">
         <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
           <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>
