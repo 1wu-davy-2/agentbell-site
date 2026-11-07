@@ -76,7 +76,7 @@ try {
             <span class="arrow">↗</span>
           </a>
         </div>
-        <p class="hero-note reveal delay-4"><span class="ver">v2.19.0</span><span class="dot-sep"></span><span data-i18n="hero.note">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
+        <p class="hero-note reveal delay-4"><span class="ver">v2.19.1</span><span class="dot-sep"></span><span data-i18n="hero.note">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
       </div>
 
       <div class="hero-stage reveal delay-2" aria-label="AgentBell 通知中心界面预览" data-i18n-aria="a11y.preview">
@@ -317,18 +317,25 @@ try {
       <div class="section-head split">
         <div>
           <p class="label" data-i18n="updates.label">04 / 更新</p>
-          <h2 class="section-title" data-i18n-html="updates.title">最近九个版本，<br>从等待走到三个平台。</h2>
+          <h2 class="section-title" data-i18n-html="updates.title">最近十个版本，<br>从等待走到三个平台。</h2>
         </div>
-        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Hook，2.15 收好多屏卡片，2.16 把提醒带到 Linux，2.17 补齐四种安装包，2.18 扩到 Windows ARM64 与 macOS，2.18.1 修好 arm64 测试，2.18.2 补全校验文件，2.19 补齐会话、搜索、归档与平台签名。</p>
+        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Hook，2.15 收好多屏卡片，2.16 把提醒带到 Linux，2.17 补齐四种安装包，2.18 扩到 Windows ARM64 与 macOS，2.18.1 修好 arm64 测试，2.18.2 补全校验文件，2.19 补齐会话、搜索、归档与平台签名，2.19.1 修复 Linux 托盘菜单生命周期。</p>
       </div>
       <div class="release-list">
+        <article class="release" data-reveal>
+          <span class="release-ver">v2.19.1</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2191.title">托盘菜单生命周期修复</h3>
+            <p data-i18n="updates.2191.body">修复 Linux 托盘菜单生命周期：上下文菜单只作为局部变量传入，且 PySide6 6.8 回收子菜单的 menuAction 包装器时会连带删除子菜单，打开勿扰模式等子菜单触发 QMenu already deleted。托盘现在同时持有上下文菜单与两个子菜单 action 的强引用。同步修正 macOS 上窗口聚焦测试的平台标志，让 mock 的 Windows 路径按预期执行。功能与 2.19.0 相同，2.19.0 标签因 Linux arm64 与 macOS 测试未通过而没有发布。</p>
+          </div>
+          <span class="release-flag" data-i18n="updates.latest">最新</span>
+        </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.19.0</span>
           <div class="release-body">
             <h3 data-i18n="updates.2190.title">会话、搜索与平台补齐</h3>
             <p data-i18n="updates.2190.body">会话页新增 Codex、Gemini、Grok 与 OpenCode 数据库来源，等待推断同步扩到前三者。通知搜索支持 status:、source:、priority:、session:、run:、ack: 字段过滤；统计提供 7 / 30 / 90 天区间与 CSV 导出，通知可批量归档并按日期或来源分组；托盘加入快捷勿扰，规则区加入试运行。macOS 补齐全局快捷键、回到终端、空闲 / 全屏 / 会议 / 锁屏推断、便携 Node 与 zip 原地更新；Wayland 通过 XDG 门户注册快捷键；CI 支持 Windows Authenticode 与 macOS Developer ID 签名、公证与 staple。</p>
           </div>
-          <span class="release-flag" data-i18n="updates.latest">最新</span>
         </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.18.2</span>
@@ -568,7 +575,7 @@ try {
     <div class="cta-beacon" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="wrap cta-inner">
       <h2 data-i18n-html="cta.title">下一次 Agent 收工，<br><em>让铃声替你看。</em></h2>
-      <p class="cta-sub" data-i18n="cta.sub">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.19.0 · MIT License</p>
+      <p class="cta-sub" data-i18n="cta.sub">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.19.1 · MIT License</p>
       <div class="hero-cta">
         <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
           <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>

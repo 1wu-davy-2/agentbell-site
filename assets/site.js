@@ -104,8 +104,10 @@
     "screens.alt.settings": "Settings",
 
     "updates.label": "04 / UPDATES",
-    "updates.title": "Nine releases,<br>from waiting to three platforms.",
-    "updates.lead": "2.13 named the wait, 2.14 wired up hooks, 2.15 tidied multi-display cards, 2.16 brought the alerts to Linux, 2.17 added AppImage, deb, and rpm, 2.18 reaches Windows ARM64 and macOS, 2.18.1 fixes the arm64 tests, 2.18.2 completes the checksums, and 2.19 fills in sessions, search, archiving, and platform signing.",
+    "updates.title": "Ten releases,<br>from waiting to three platforms.",
+    "updates.lead": "2.13 named the wait, 2.14 wired up hooks, 2.15 tidied multi-display cards, 2.16 brought the alerts to Linux, 2.17 added AppImage, deb, and rpm, 2.18 reaches Windows ARM64 and macOS, 2.18.1 fixes the arm64 tests, 2.18.2 completes the checksums, 2.19 fills in sessions, search, archiving, and platform signing, and 2.19.1 fixes the Linux tray menu lifetime.",
+    "updates.2191.title": "Tray menu lifetime fix",
+    "updates.2191.body": "Fixes the Linux tray menu lifetime: the context menu was only held as a local, and PySide6 6.8 deletes a submenu when its menuAction wrapper is collected, so opening Do Not Disturb raised QMenu already deleted. The tray now keeps strong references to the context menu and both submenu actions. The macOS window-focus tests also reset the platform flags so the mocked Windows paths run as intended. Behavior matches 2.19.0, which was never published because its Linux arm64 and macOS tests failed.",
     "updates.2190.title": "Sessions, search, and platform parity",
     "updates.2190.body": "The session page adds Codex, Gemini, Grok, and OpenCode's database as sources, and waiting inference now covers the first three. Search accepts status:, source:, priority:, session:, run:, and ack: field filters; statistics add 7/30/90-day ranges and CSV export; notifications can be batch-archived and grouped by date or source; the tray gains quick Do Not Disturb, and rules gain a test run. macOS adds global hotkeys, back-to-terminal, idle/fullscreen/meeting/lock inference, portable Node, and in-place zip updates; Wayland registers hotkeys through the XDG portal; CI supports Windows Authenticode, macOS Developer ID signing, notarization, and stapling.",
     "updates.2182.title": "Complete checksums",
@@ -204,7 +206,7 @@
     "faq.a6": "AgentBell is deliberately a native PySide6 window: closer to the desktop, less intrusive, and no browser tab to keep around.",
 
     "cta.title": "Next time your agent clocks out,<br><em>let the bell look.</em>",
-    "cta.sub": "Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.19.0 · MIT License",
+    "cta.sub": "Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.19.1 · MIT License",
     "cta.download": "Download for Windows / macOS / Linux",
     "cta.gh": "View on GitHub",
 
