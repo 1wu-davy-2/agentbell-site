@@ -105,7 +105,9 @@
 
     "updates.label": "04 / UPDATES",
     "updates.title": "Ten releases,<br>from waiting to three platforms.",
-    "updates.lead": "2.13 named the wait, 2.14 wired up hooks, 2.15 tidied multi-display cards, 2.16 brought the alerts to Linux, 2.17 added AppImage, deb, and rpm, 2.18 reaches Windows ARM64 and macOS, 2.18.1 fixes the arm64 tests, 2.18.2 completes the checksums, 2.19 fills in sessions, search, archiving, and platform signing, and 2.19.1 fixes the Linux tray menu lifetime.",
+    "updates.lead": "2.14 wired up hooks, 2.15 tidied multi-display cards, 2.16 brought the alerts to Linux, 2.17 added AppImage, deb, and rpm, 2.18 reaches Windows ARM64 and macOS, 2.18.1 fixes the arm64 tests, 2.18.2 completes the checksums, 2.19 fills in sessions, search, archiving, and platform signing, 2.19.1 fixes the Linux tray menu lifetime, and 2.20 opens the notification center from a tray click.",
+    "updates.2200.title": "Open the center from the tray",
+    "updates.2200.body": "A left single-click or double-click on the tray icon opens and raises the notification center, including from the Windows tray overflow panel. Right-click keeps the full menu, and unread flashing plus Do Not Disturb state are unchanged. A double-click only raises the existing window again; it never creates a second one or writes duplicate history.",
     "updates.2191.title": "Tray menu lifetime fix",
     "updates.2191.body": "Fixes the Linux tray menu lifetime: the context menu was only held as a local, and PySide6 6.8 deletes a submenu when its menuAction wrapper is collected, so opening Do Not Disturb raised QMenu already deleted. The tray now keeps strong references to the context menu and both submenu actions. The macOS window-focus tests also reset the platform flags so the mocked Windows paths run as intended. Behavior matches 2.19.0, which was never published because its Linux arm64 and macOS tests failed.",
     "updates.2190.title": "Sessions, search, and platform parity",
@@ -206,7 +208,7 @@
     "faq.a6": "AgentBell is deliberately a native PySide6 window: closer to the desktop, less intrusive, and no browser tab to keep around.",
 
     "cta.title": "Next time your agent clocks out,<br><em>let the bell look.</em>",
-    "cta.sub": "Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.19.1 · MIT License",
+    "cta.sub": "Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.20.0 · MIT License",
     "cta.download": "Download for Windows / macOS / Linux",
     "cta.gh": "View on GitHub",
 
