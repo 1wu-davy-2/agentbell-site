@@ -76,7 +76,7 @@ try {
             <span class="arrow">↗</span>
           </a>
         </div>
-        <p class="hero-note reveal delay-4"><span class="ver">v2.20.0</span><span class="dot-sep"></span><span data-i18n="hero.note">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
+        <p class="hero-note reveal delay-4"><span class="ver">v2.21.0</span><span class="dot-sep"></span><span data-i18n="hero.note">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
       </div>
 
       <div class="hero-stage reveal delay-2" aria-label="AgentBell 通知中心界面预览" data-i18n-aria="a11y.preview">
@@ -319,16 +319,23 @@ try {
           <p class="label" data-i18n="updates.label">04 / 更新</p>
           <h2 class="section-title" data-i18n-html="updates.title">最近十个版本，<br>从等待走到三个平台。</h2>
         </div>
-        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Hook，2.15 收好多屏卡片，2.16 把提醒带到 Linux，2.17 补齐四种安装包，2.18 扩到 Windows ARM64 与 macOS，2.18.1 修好 arm64 测试，2.18.2 补全校验文件，2.19 补齐会话、搜索、归档与平台签名，2.19.1 修复 Linux 托盘菜单生命周期，2.20 托盘点击直接打开通知中心。</p>
+        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Hook，2.15 收好多屏卡片，2.16 把提醒带到 Linux，2.17 补齐四种安装包，2.18 扩到 Windows ARM64 与 macOS，2.18.1 修好 arm64 测试，2.18.2 补全校验文件，2.19 补齐会话、搜索、归档与平台签名，2.19.1 修复 Linux 托盘菜单生命周期，2.20 托盘点击直接打开通知中心，2.21 补上未读角标、卡片点击与历史按天保留。</p>
       </div>
       <div class="release-list">
+        <article class="release" data-reveal>
+          <span class="release-ver">v2.21.0</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2210.title">未读角标、卡片点击与按天保留</h3>
+            <p data-i18n="updates.2210.body">托盘图标在存在未读时叠加红色数字角标，超过 99 显示 99+，闪烁提醒仍然优先；点击弹窗卡片的标题、摘要或空白区域会打开通知中心并收起当前弹窗，卡片按钮保持原有行为；通知中心按 Ctrl+F 直接切到通知记录并聚焦搜索框。历史数据库新增 history.retention_days 按天保留，与条数上限同时生效，设置页可直接调整，保存后立即清理过期记录。</p>
+          </div>
+          <span class="release-flag" data-i18n="updates.latest">最新</span>
+        </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.20.0</span>
           <div class="release-body">
             <h3 data-i18n="updates.2200.title">托盘点击打开通知中心</h3>
             <p data-i18n="updates.2200.body">左键单击或双击托盘图标会打开并置前通知中心，Windows 托盘溢出面板里的图标同样生效；右键仍显示原菜单，未读闪烁与勿扰状态不受影响。双击只会重复置前，不会创建第二个窗口或重复写入历史。</p>
           </div>
-          <span class="release-flag" data-i18n="updates.latest">最新</span>
         </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.19.1</span>
@@ -384,13 +391,6 @@ try {
           <div class="release-body">
             <h3 data-i18n="updates.2150.title">全屏提醒可只在主屏显示卡片</h3>
             <p data-i18n="updates.2150.body">overlay 模式仍逐屏覆盖所有显示器，新增「仅在主屏显示全屏提醒卡片」：副屏只保留背景，卡片只出现在主屏；在任意屏幕确认、点击遮罩或等待超时，所有屏幕一起关闭。</p>
-          </div>
-        </article>
-        <article class="release" data-reveal>
-          <span class="release-ver">v2.14.0</span>
-          <div class="release-body">
-            <h3 data-i18n="updates.2140.title">一键接入 Agent 提醒 Hook</h3>
-            <p data-i18n="updates.2140.body">运行环境页可一键接入 Claude Code、Gemini CLI 与 Grok 的等待与结束 Hook，Codex 通过 notify 接入；写入前可预览改动、自动备份，并支持一键撤销。</p>
           </div>
         </article>
       </div>
@@ -575,7 +575,7 @@ try {
     <div class="cta-beacon" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="wrap cta-inner">
       <h2 data-i18n-html="cta.title">下一次 Agent 收工，<br><em>让铃声替你看。</em></h2>
-      <p class="cta-sub" data-i18n="cta.sub">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.20.0 · MIT License</p>
+      <p class="cta-sub" data-i18n="cta.sub">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.21.0 · MIT License</p>
       <div class="hero-cta">
         <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
           <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>
