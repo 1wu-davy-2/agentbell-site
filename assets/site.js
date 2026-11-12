@@ -113,7 +113,9 @@
 
     "updates.label": "04 / UPDATES",
     "updates.title": "Recent releases,<br>from waiting to three platforms.",
-    "updates.lead": "2.14 wired up hooks, 2.15 tidied multi-display cards, 2.16 brought the alerts to Linux, 2.17 added AppImage, deb, and rpm, 2.18 reaches Windows ARM64 and macOS, 2.18.1 fixes the arm64 tests, 2.18.2 completes the checksums, 2.19 fills in sessions, search, archiving, and platform signing, 2.19.1 fixes the Linux tray menu lifetime, 2.20 opens the notification center from a tray click, 2.21 adds an unread badge, card click, and daily retention, 2.22 adds local voice, MCP tools, a token/cost guard, and DeepSeek Harness, and 2.23 lets agents put model, tools, and context progress on the notification and accept external usage and session heartbeats.",
+    "updates.lead": "2.14 wired up hooks, 2.15 tidied multi-display cards, 2.16 brought the alerts to Linux, 2.17 added AppImage, deb, and rpm, 2.18 reaches Windows ARM64 and macOS, 2.18.1 fixes the arm64 tests, 2.18.2 completes the checksums, 2.19 fills in sessions, search, archiving, and platform signing, 2.19.1 fixes the Linux tray menu lifetime, 2.20 opens the notification center from a tray click, 2.21 adds an unread badge, card click, and daily retention, 2.22 adds local voice, MCP tools, a token/cost guard, and DeepSeek Harness, 2.23 lets agents put model, tools, and context progress on the notification and accept external usage and session heartbeats, and 2.24 groups rounds into a session history stream with three update modes: full, start+finish, and finish only.",
+    "updates.2400.title": "Session history and three update modes",
+    "updates.2400.body": "Notifications sharing a session_id now form one chronological history, reachable from the card and the agent session detail, with start, progress, and finish events per round. Without an explicit session_id, a round is linked only when the same agent, same project, session updated within 30 minutes, and exactly one candidate all match; ambiguous cases are skipped. Integration adds three modes — Full, Start+Finish, and Finish only — and the copied instructions adapt to the selection. Agents can register their actual mode through /integration/report, and registrations appear under Runtime and in MCP get_status. Everything still stays on the local machine.",
     "updates.2230.title": "Richer notifications and external data",
     "updates.2230.body": "Notifications gain a bounded metadata field: model, turn, tool count, file count, context usage, and custom markers appear as chips on the card; the run timeline adds a compaction phase, and permission or question waits can raise an immediate alert with source details. Two loopback endpoints and matching MCP tools open up external data: report_usage merges external agent tokens through an idempotent ledger, and report_session feeds external sessions into In Progress via heartbeats that expire after 10 minutes without one. Both routes use the same token auth and only write local SQLite and an in-memory registry.",
     "updates.2220.title": "Voice, MCP, cost guard, and DeepSeek",
@@ -222,7 +224,7 @@
     "faq.a6": "AgentBell is deliberately a native PySide6 window: closer to the desktop, less intrusive, and no browser tab to keep around.",
 
     "cta.title": "Next time your agent clocks out,<br><em>let the bell look.</em>",
-    "cta.sub": "Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.23.0 · MIT License",
+    "cta.sub": "Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.24.0 · MIT License",
     "cta.download": "Download for Windows / macOS / Linux",
     "cta.gh": "View on GitHub",
 

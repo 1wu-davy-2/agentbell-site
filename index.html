@@ -76,7 +76,7 @@ try {
             <span class="arrow">↗</span>
           </a>
         </div>
-        <p class="hero-note reveal delay-4"><span class="ver">v2.23.0</span><span class="dot-sep"></span><span data-i18n="hero.note">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
+        <p class="hero-note reveal delay-4"><span class="ver">v2.24.0</span><span class="dot-sep"></span><span data-i18n="hero.note">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
       </div>
 
       <div class="hero-stage reveal delay-2" aria-label="AgentBell 通知中心界面预览" data-i18n-aria="a11y.preview">
@@ -355,16 +355,23 @@ try {
           <p class="label" data-i18n="updates.label">04 / 更新</p>
           <h2 class="section-title" data-i18n-html="updates.title">最近的版本，<br>从等待走到三个平台。</h2>
         </div>
-        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Hook，2.15 收好多屏卡片，2.16 把提醒带到 Linux，2.17 补齐四种安装包，2.18 扩到 Windows ARM64 与 macOS，2.18.1 修好 arm64 测试，2.18.2 补全校验文件，2.19 补齐会话、搜索、归档与平台签名，2.19.1 修复 Linux 托盘菜单生命周期，2.20 托盘点击直接打开通知中心，2.21 补上未读角标、卡片点击与历史按天保留，2.22 加入本地语音、MCP 工具、Token 成本守卫与 DeepSeek Harness 接入，2.23 让 Agent 把模型、工具与上下文进度写进通知，并接受外部用量与会话心跳。</p>
+        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Hook，2.15 收好多屏卡片，2.16 把提醒带到 Linux，2.17 补齐四种安装包，2.18 扩到 Windows ARM64 与 macOS，2.18.1 修好 arm64 测试，2.18.2 补全校验文件，2.19 补齐会话、搜索、归档与平台签名，2.19.1 修复 Linux 托盘菜单生命周期，2.20 托盘点击直接打开通知中心，2.21 补上未读角标、卡片点击与历史按天保留，2.22 加入本地语音、MCP 工具、Token 成本守卫与 DeepSeek Harness 接入，2.23 让 Agent 把模型、工具与上下文进度写进通知，并接受外部用量与会话心跳，2.24 把同一会话的多轮通知汇成历史流，并提供最全、开始+结束、仅结束三种接入模式。</p>
       </div>
       <div class="release-list">
+        <article class="release" data-reveal>
+          <span class="release-ver">v2.24.0</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2400.title">会话历史流与三种更新模式</h3>
+            <p data-i18n="updates.2400.body">同一 session_id 的多轮通知现在按时间汇成一条历史流：通知卡片与会话详情都能直接进入，每轮可展开开始、进展与完成事件。未显式提供 session_id 时，只在同一 Agent、同一项目、30 分钟内仍有更新且候选唯一时自动关联并标记，歧义时不猜测。接入提醒新增「最全 / 开始+结束 / 仅结束」三种模式，复制出的指令按模式裁剪；Agent 可调用 /integration/report 登记实际模式，登记结果在运行环境页与 MCP get_status 中可查。全部数据仍只写本机。</p>
+          </div>
+          <span class="release-flag" data-i18n="updates.latest">最新</span>
+        </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.23.0</span>
           <div class="release-body">
             <h3 data-i18n="updates.2230.title">更丰富的通知与外部数据接入</h3>
             <p data-i18n="updates.2230.body">通知新增受限的 metadata 字段：模型、轮次、工具次数、文件数、上下文占用与自定义标记都会以标签形式出现在卡片上；运行时间线新增 compaction 阶段，权限与提问等待可附带来源信息立即提醒。同时开放两个本机接口与对应 MCP 工具：report_usage 用幂等账本合并外部 Agent 的 token 用量，report_session 通过心跳把外部会话汇入「进行中」，默认 10 分钟无心跳自动消失。两条路由沿用 token 鉴权，只写本机 SQLite 与内存注册表。</p>
           </div>
-          <span class="release-flag" data-i18n="updates.latest">最新</span>
         </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.22.0</span>
@@ -625,7 +632,7 @@ try {
     <div class="cta-beacon" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="wrap cta-inner">
       <h2 data-i18n-html="cta.title">下一次 Agent 收工，<br><em>让铃声替你看。</em></h2>
-      <p class="cta-sub" data-i18n="cta.sub">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.23.0 · MIT License</p>
+      <p class="cta-sub" data-i18n="cta.sub">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.24.0 · MIT License</p>
       <div class="hero-cta">
         <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
           <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>
