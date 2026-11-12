@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AgentBell · 本机通知中心，让 Agent 收工有铃声</title>
-<meta name="description" data-i18n-attr="content:meta.description" content="AgentBell 是一个只做提醒的 Windows / macOS / Linux 本机桌面通知中心。Claude Code、Codex、Gemini CLI 等 Agent 跑完或卡在权限确认、提问、限流时，屏幕角落递上一张置顶卡片；X11 下还有全局快捷键、回到终端、全屏与空闲检测、托盘；支持等待原因、运行时间线、只读动作、按原因/时长/项目分流规则、历史与统计，只监听 127.0.0.1。">
+<meta name="description" data-i18n-attr="content:meta.description" content="AgentBell 是一个只做提醒的 Windows / macOS / Linux 本机桌面通知中心。Claude Code、Codex、Gemini CLI 等 Agent 跑完或卡在权限确认、提问、限流时，屏幕角落递上一张置顶卡片；X11 下还有全局快捷键、回到终端、全屏与空闲检测、托盘；支持等待原因、运行时间线、只读动作、按原因/时长/项目分流规则、历史与统计，新增本地语音播报、MCP 工具与 Token/成本守卫，并可接入 DeepSeek Harness，只监听 127.0.0.1。">
 <meta name="theme-color" content="#F6F5F1">
 <meta property="og:type" content="website">
 <meta property="og:title" data-i18n-attr="content:meta.title" content="AgentBell · 本机通知中心，让 Agent 收工有铃声">
@@ -65,7 +65,7 @@ try {
       <div class="hero-copy">
         <p class="eyebrow reveal" data-i18n="hero.eyebrow">本机通知中心 · WINDOWS / MACOS / LINUX</p>
         <h1 class="reveal delay-1" data-i18n-html="hero.title">Agent 收工，<br><em>铃声替你回头。</em></h1>
-        <p class="hero-lead reveal delay-2" data-i18n="hero.lead">一个只做提醒的本地通知中心。Claude Code、Codex、Gemini CLI 跑完一轮，或卡在权限确认、提问与限流时，屏幕角落递上一张置顶卡片——还能回看运行时间线、打开会话记录，按原因与项目分流。</p>
+        <p class="hero-lead reveal delay-2" data-i18n="hero.lead">一个只做提醒的本地通知中心。Claude Code、Codex、Gemini CLI 跑完一轮，或卡在权限确认、提问与限流时，屏幕角落递上一张置顶卡片——还能回看运行时间线、打开会话记录，按原因与项目分流。现在还能语音播报、通过 MCP 发通知，并守住每日 Token 预算。</p>
         <div class="hero-cta reveal delay-3">
           <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
             <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>
@@ -76,7 +76,7 @@ try {
             <span class="arrow">↗</span>
           </a>
         </div>
-        <p class="hero-note reveal delay-4"><span class="ver">v2.21.0</span><span class="dot-sep"></span><span data-i18n="hero.note">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
+        <p class="hero-note reveal delay-4"><span class="ver">v2.23.0</span><span class="dot-sep"></span><span data-i18n="hero.note">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · 只监听 127.0.0.1</span></p>
       </div>
 
       <div class="hero-stage reveal delay-2" aria-label="AgentBell 通知中心界面预览" data-i18n-aria="a11y.preview">
@@ -265,6 +265,42 @@ try {
           <p data-i18n="feature.rules.body">按等待原因、needs_input、时长与项目匹配，覆盖优先级、确认与通知通道；规则保存即生效，试运行可查看样例通知命中的规则。</p>
           <div class="rule-mini" aria-hidden="true"><code>permission</code><code>demo-api</code><span>→ critical</span></div>
         </article>
+
+        <article class="card card-j" data-reveal>
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 9v6h4l5 4V5L8 9H4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <h3 data-i18n="feature.voice.title">本地语音播报</h3>
+          <p data-i18n="feature.voice.body">通知到达时用系统 TTS 念出标题与状态，支持语速、摘要与最低优先级；只在本机发声，不上传文本。</p>
+          <div class="mini-bars" aria-hidden="true"><i style="--h:34%"></i><i style="--h:58%"></i><i style="--h:44%"></i><i style="--h:82%"></i><i style="--h:56%"></i><i style="--h:92%"></i><i class="on" style="--h:70%"></i></div>
+        </article>
+
+        <article class="card card-k" data-reveal>
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 9h6v6H9zM12 4v5M12 15v5M4 12h5M15 12h5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </span>
+          <h3 data-i18n="feature.mcp.title">MCP 工具</h3>
+          <p data-i18n="feature.mcp.body">现有本机服务直接提供 MCP：notify、search_history、get_status 与外部数据上报；任何 MCP 客户端都能发通知、查历史、把外部用量与会话心跳送进本机统计，仍只监听 127.0.0.1。</p>
+          <div class="terminal-line" aria-hidden="true"><span class="prompt">›</span> tools/call <span class="str">notify</span><span class="caret"></span></div>
+        </article>
+
+        <article class="card card-l" data-reveal>
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 16a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 16l4-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="16" r="1.6" fill="currentColor"/><path d="M4 20h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <h3 data-i18n="feature.usage.title">Token 与成本守卫</h3>
+          <p data-i18n="feature.usage.body">增量统计 Claude、Qoder 与 Codex 的每日 token，按价格表估算成本，超过日预算或阈值时提醒一次。</p>
+          <div class="rule-mini" aria-hidden="true"><code>daily</code><code>tokens</code><span>→ 80%</span></div>
+        </article>
+
+        <article class="card card-m" data-reveal>
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9L18 15Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 data-i18n="feature.dsh.title">DeepSeek Harness 接入</h3>
+          <p data-i18n="feature.dsh.body">附带 SKILL.md 技能与官方 bundle 插件，dsh 每轮 turn/end 自动上报；同一技能也可被 Claude Code 等复用。</p>
+          <div class="chip-row" aria-hidden="true"><span>SKILL.md</span><span>bundle</span><span>turn/end</span></div>
+        </article>
       </div>
     </div>
   </section>
@@ -317,18 +353,32 @@ try {
       <div class="section-head split">
         <div>
           <p class="label" data-i18n="updates.label">04 / 更新</p>
-          <h2 class="section-title" data-i18n-html="updates.title">最近十个版本，<br>从等待走到三个平台。</h2>
+          <h2 class="section-title" data-i18n-html="updates.title">最近的版本，<br>从等待走到三个平台。</h2>
         </div>
-        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Hook，2.15 收好多屏卡片，2.16 把提醒带到 Linux，2.17 补齐四种安装包，2.18 扩到 Windows ARM64 与 macOS，2.18.1 修好 arm64 测试，2.18.2 补全校验文件，2.19 补齐会话、搜索、归档与平台签名，2.19.1 修复 Linux 托盘菜单生命周期，2.20 托盘点击直接打开通知中心，2.21 补上未读角标、卡片点击与历史按天保留。</p>
+        <p class="section-lead right" data-i18n="updates.lead">2.13 把等待讲清楚，2.14 接上 Hook，2.15 收好多屏卡片，2.16 把提醒带到 Linux，2.17 补齐四种安装包，2.18 扩到 Windows ARM64 与 macOS，2.18.1 修好 arm64 测试，2.18.2 补全校验文件，2.19 补齐会话、搜索、归档与平台签名，2.19.1 修复 Linux 托盘菜单生命周期，2.20 托盘点击直接打开通知中心，2.21 补上未读角标、卡片点击与历史按天保留，2.22 加入本地语音、MCP 工具、Token 成本守卫与 DeepSeek Harness 接入，2.23 让 Agent 把模型、工具与上下文进度写进通知，并接受外部用量与会话心跳。</p>
       </div>
       <div class="release-list">
+        <article class="release" data-reveal>
+          <span class="release-ver">v2.23.0</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2230.title">更丰富的通知与外部数据接入</h3>
+            <p data-i18n="updates.2230.body">通知新增受限的 metadata 字段：模型、轮次、工具次数、文件数、上下文占用与自定义标记都会以标签形式出现在卡片上；运行时间线新增 compaction 阶段，权限与提问等待可附带来源信息立即提醒。同时开放两个本机接口与对应 MCP 工具：report_usage 用幂等账本合并外部 Agent 的 token 用量，report_session 通过心跳把外部会话汇入「进行中」，默认 10 分钟无心跳自动消失。两条路由沿用 token 鉴权，只写本机 SQLite 与内存注册表。</p>
+          </div>
+          <span class="release-flag" data-i18n="updates.latest">最新</span>
+        </article>
+        <article class="release" data-reveal>
+          <span class="release-ver">v2.22.0</span>
+          <div class="release-body">
+            <h3 data-i18n="updates.2220.title">语音、MCP、成本守卫与 DeepSeek</h3>
+            <p data-i18n="updates.2220.body">新增本地语音播报，用系统 TTS 念出标题与状态，支持语速、摘要与最低优先级；现有本机服务新增 MCP 端点，提供 notify、search_history 与 get_status，沿用 token 鉴权。统计页加入 Agent 用量：增量扫描 Claude、Qoder 与 Codex 的每日 token，按可配置价格表估算成本，并在达到日预算阈值时提醒一次。另附 DeepSeek Harness 技能与 bundle 插件，每轮 turn/end 自动上报。所有新功能仍在 127.0.0.1 内完成，不上传文本或用量。</p>
+          </div>
+        </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.21.0</span>
           <div class="release-body">
             <h3 data-i18n="updates.2210.title">未读角标、卡片点击与按天保留</h3>
             <p data-i18n="updates.2210.body">托盘图标在存在未读时叠加红色数字角标，超过 99 显示 99+，闪烁提醒仍然优先；点击弹窗卡片的标题、摘要或空白区域会打开通知中心并收起当前弹窗，卡片按钮保持原有行为；通知中心按 Ctrl+F 直接切到通知记录并聚焦搜索框。历史数据库新增 history.retention_days 按天保留，与条数上限同时生效，设置页可直接调整，保存后立即清理过期记录。</p>
           </div>
-          <span class="release-flag" data-i18n="updates.latest">最新</span>
         </article>
         <article class="release" data-reveal>
           <span class="release-ver">v2.20.0</span>
@@ -448,7 +498,7 @@ try {
           </li>
           <li data-reveal>
             <span class="step-no">03</span>
-            <div><h3 data-i18n="start.step3.title">让 Agent 调用 /notify</h3><p data-i18n="start.step3.body">一轮结束时 POST 一次；工具栏的「复制 Agent 接入指令」可把说明直接交给 Agent。</p></div>
+            <div><h3 data-i18n="start.step3.title">让 Agent 调用 /notify</h3><p data-i18n="start.step3.body">一轮结束时 POST 一次，或从任意 MCP 客户端调用 notify；工具栏的「复制 Agent 接入指令」可把说明直接交给 Agent。</p></div>
           </li>
         </ol>
       </div>
@@ -575,7 +625,7 @@ try {
     <div class="cta-beacon" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="wrap cta-inner">
       <h2 data-i18n-html="cta.title">下一次 Agent 收工，<br><em>让铃声替你看。</em></h2>
-      <p class="cta-sub" data-i18n="cta.sub">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.21.0 · MIT License</p>
+      <p class="cta-sub" data-i18n="cta.sub">Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.23.0 · MIT License</p>
       <div class="hero-cta">
         <a class="btn btn-amber btn-lg" href="https://github.com/1wu-davy-2/AgentBell/releases/latest">
           <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M10 2v9.2L6.4 7.6 5 9l5 5 5-5-1.4-1.4L10 11.2V2H10Z"/><path fill="currentColor" d="M3 15h14v2H3z"/></svg>

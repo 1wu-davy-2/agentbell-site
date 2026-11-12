@@ -517,6 +517,7 @@ html[lang="en"] .hero h1 { font-size: clamp(44px, 4.7vw, 66px); letter-spacing: 
 .card-c { grid-column: span 5; min-height: 208px; }
 .card-d, .card-e, .card-f { grid-column: span 4; min-height: 214px; }
 .card-g, .card-h, .card-i { grid-column: span 4; min-height: 228px; }
+.card-j, .card-k, .card-l, .card-m { grid-column: span 3; min-height: 228px; }
 .wait-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
 .wait-pills span {
   font-family: var(--mono);
@@ -1139,6 +1140,7 @@ html[data-theme="light"] .toast-copied { box-shadow: 0 16px 38px rgba(20, 20, 15
   .card-b, .card-c { grid-column: span 3; }
   .card-d, .card-e, .card-f { grid-column: span 2; min-height: 220px; }
   .card-g, .card-h, .card-i { grid-column: span 2; min-height: 240px; }
+  .card-j, .card-k, .card-l, .card-m { grid-column: span 3; min-height: 240px; }
   .start-grid, .runtime-grid { grid-template-columns: 1fr; gap: 44px; }
   .code-card { position: relative; top: 0; max-width: 760px; }
   .faq-grid { grid-template-columns: 1fr; gap: 34px; }
@@ -1175,7 +1177,7 @@ html[data-theme="light"] .toast-copied { box-shadow: 0 16px 38px rgba(20, 20, 15
   .poster-shelf { grid-template-columns: 1fr; gap: 12px; padding: 26px 4px; }
   .poster-label { flex-direction: row; align-items: baseline; gap: 12px; padding-top: 0; }
   .poster-head { flex-direction: column; gap: 4px; margin-bottom: 14px; }
-  .card-a, .card-b, .card-c, .card-d, .card-e, .card-f, .card-g, .card-h, .card-i { grid-column: span 6; }
+  .card-a, .card-b, .card-c, .card-d, .card-e, .card-f, .card-g, .card-h, .card-i, .card-j, .card-k, .card-l, .card-m { grid-column: span 6; }
   .card-a { min-height: 380px; }
   .tab-list { width: 100%; overflow-x: auto; border-radius: 14px; scrollbar-width: none; }
   .tab-list::-webkit-scrollbar { display: none; }
@@ -1209,7 +1211,7 @@ html[data-theme="light"] .toast-copied { box-shadow: 0 16px 38px rgba(20, 20, 15
   .device-title { font-size: 8.5px; }
   .beacon { width: 380px; height: 380px; }
   .section-title { font-size: clamp(32px, 9vw, 42px); }
-  .card-a, .card-b, .card-c, .card-d, .card-e, .card-f, .card-g, .card-h, .card-i { grid-column: span 6; }
+  .card-a, .card-b, .card-c, .card-d, .card-e, .card-f, .card-g, .card-h, .card-i, .card-j, .card-k, .card-l, .card-m { grid-column: span 6; }
   .card { padding: 22px; }
   .toast-stack { height: 205px; }
   .mc-1 { width: 100%; }

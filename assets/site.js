@@ -3,7 +3,7 @@
 
   var EN = {
     "meta.title": "AgentBell · Local notifications for Claude Code, Codex & Gemini CLI",
-    "meta.description": "AgentBell is a Windows / macOS / Linux local desktop notification center that does one thing: when Claude Code, Codex, Gemini CLI or any agent finishes, or gets stuck on permission, a question, or rate limits, a pinned card lands in the corner. Windows and macOS also get global hotkeys, back-to-terminal, fullscreen and idle detection, and a tray; Wayland uses the XDG portal for hotkeys. Waiting reasons, run timelines, read-only actions, rule routing, field search, archived history, and stats all stay on 127.0.0.1.",
+    "meta.description": "AgentBell is a Windows / macOS / Linux local desktop notification center that does one thing: when Claude Code, Codex, Gemini CLI or any agent finishes, or gets stuck on permission, a question, or rate limits, a pinned card lands in the corner. Windows and macOS also get global hotkeys, back-to-terminal, fullscreen and idle detection, and a tray; Wayland uses the XDG portal for hotkeys. Waiting reasons, run timelines, read-only actions, rule routing, field search, archived history, and stats all stay on 127.0.0.1. Local voice, MCP tools, and a token/cost guard are built in, with a DeepSeek Harness skill and bundle plugin.",
 
     "a11y.skip": "Skip to content",
     "a11y.home": "AgentBell home",
@@ -24,7 +24,7 @@
 
     "hero.eyebrow": "LOCAL NOTIFICATION CENTER · WINDOWS / MACOS / LINUX",
     "hero.title": "Agents clock out.<br><em>The bell calls.<br>You come back.</em>",
-    "hero.lead": "A local notification center that does exactly one thing. When Claude Code, Codex, or Gemini CLI finishes a turn — or gets stuck on permission, a question, or a rate limit — a pinned card appears in the corner. Replay the run timeline, open the session, and route by reason or project.",
+    "hero.lead": "A local notification center that does exactly one thing. When Claude Code, Codex, or Gemini CLI finishes a turn — or gets stuck on permission, a question, or a rate limit — a pinned card appears in the corner. Replay the run timeline, open the session, and route by reason or project. It also speaks alerts, serves MCP tools, and guards daily token budgets.",
     "hero.cta": "Download for Windows / macOS / Linux",
     "hero.gh": "View on GitHub",
     "hero.note": "Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · listens on 127.0.0.1 only",
@@ -79,6 +79,14 @@
     "feature.timeline.step4": "Finish",
     "feature.rules.title": "Rule routing",
     "feature.rules.body": "Match by wait reason, needs_input, duration, and project to override priority, acknowledgement, and channels — effective as soon as you save, with a test run that shows which rule a sample notification matches.",
+    "feature.voice.title": "Local voice",
+    "feature.voice.body": "System TTS speaks the title and status when a notification lands, with rate, summary, and minimum-priority controls — local only, no text upload.",
+    "feature.mcp.title": "MCP tools",
+    "feature.mcp.body": "The existing local service speaks MCP: notify, search_history, get_status, and external data reporting. Any MCP client can post notifications, query history, and feed external usage or session heartbeats into the local stats, still on 127.0.0.1 only.",
+    "feature.usage.title": "Token & cost guard",
+    "feature.usage.body": "Incrementally totals daily tokens for Claude, Qoder, and Codex, estimates cost from a price table, and alerts once when daily budgets or thresholds are crossed.",
+    "feature.dsh.title": "DeepSeek Harness",
+    "feature.dsh.body": "Ships a SKILL.md skill and an official bundle plugin, so dsh reports at every turn/end — the same skill works with Claude Code and other agents.",
 
     "common.done": "Done",
     "common.running": "Running",
@@ -104,8 +112,12 @@
     "screens.alt.settings": "Settings",
 
     "updates.label": "04 / UPDATES",
-    "updates.title": "Ten releases,<br>from waiting to three platforms.",
-    "updates.lead": "2.14 wired up hooks, 2.15 tidied multi-display cards, 2.16 brought the alerts to Linux, 2.17 added AppImage, deb, and rpm, 2.18 reaches Windows ARM64 and macOS, 2.18.1 fixes the arm64 tests, 2.18.2 completes the checksums, 2.19 fills in sessions, search, archiving, and platform signing, 2.19.1 fixes the Linux tray menu lifetime, 2.20 opens the notification center from a tray click, and 2.21 adds an unread badge, card click, and daily retention.",
+    "updates.title": "Recent releases,<br>from waiting to three platforms.",
+    "updates.lead": "2.14 wired up hooks, 2.15 tidied multi-display cards, 2.16 brought the alerts to Linux, 2.17 added AppImage, deb, and rpm, 2.18 reaches Windows ARM64 and macOS, 2.18.1 fixes the arm64 tests, 2.18.2 completes the checksums, 2.19 fills in sessions, search, archiving, and platform signing, 2.19.1 fixes the Linux tray menu lifetime, 2.20 opens the notification center from a tray click, 2.21 adds an unread badge, card click, and daily retention, 2.22 adds local voice, MCP tools, a token/cost guard, and DeepSeek Harness, and 2.23 lets agents put model, tools, and context progress on the notification and accept external usage and session heartbeats.",
+    "updates.2230.title": "Richer notifications and external data",
+    "updates.2230.body": "Notifications gain a bounded metadata field: model, turn, tool count, file count, context usage, and custom markers appear as chips on the card; the run timeline adds a compaction phase, and permission or question waits can raise an immediate alert with source details. Two loopback endpoints and matching MCP tools open up external data: report_usage merges external agent tokens through an idempotent ledger, and report_session feeds external sessions into In Progress via heartbeats that expire after 10 minutes without one. Both routes use the same token auth and only write local SQLite and an in-memory registry.",
+    "updates.2220.title": "Voice, MCP, cost guard, and DeepSeek",
+    "updates.2220.body": "Local voice now speaks notifications through system TTS, with rate, summary, and minimum-priority controls. The existing HTTP service gains an MCP endpoint offering notify, search_history, and get_status behind the same token auth. Stats add agent usage: incremental daily token totals for Claude, Qoder, and Codex, cost estimates from a configurable price table, and one alert when daily budgets cross their threshold. A DeepSeek Harness skill and bundle plugin report every turn/end automatically. Everything still stays on 127.0.0.1 — no text or usage leaves the machine.",
     "updates.2210.title": "Unread badge, card click, and retention",
     "updates.2210.body": "The tray icon now shows a red numeric badge while notifications are unread (99+ above 99), and flashing still takes priority. Clicking a popup card's title, summary, or empty area opens the notification center and dismisses the popup, while the card's buttons keep their existing behavior. Ctrl+F in the center jumps to notifications and focuses search. History gains history.retention_days alongside the item limit, adjustable in Settings with expired records cleaned up immediately on save.",
     "updates.2200.title": "Open the center from the tray",
@@ -154,7 +166,7 @@
     "start.step2.title": "Set a token",
     "start.step2.body": "Open config.json next to the exe and fill in token; leave it empty to disable auth — local use only.",
     "start.step3.title": "Have your agent call /notify",
-    "start.step3.body": "POST once at the end of a turn. The toolbar's “Copy agent instructions” hands the spec straight to your agent.",
+    "start.step3.body": "POST once at the end of a turn, or call notify from any MCP client. The toolbar's “Copy agent instructions” hands the spec straight to your agent.",
     "start.terminal.title": "AGENT INSTRUCTIONS",
     "start.copy": "Copy",
     "start.copyAria": "Copy agent instructions",
@@ -210,7 +222,7 @@
     "faq.a6": "AgentBell is deliberately a native PySide6 window: closer to the desktop, less intrusive, and no browser tab to keep around.",
 
     "cta.title": "Next time your agent clocks out,<br><em>let the bell look.</em>",
-    "cta.sub": "Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.21.0 · MIT License",
+    "cta.sub": "Windows x64 / arm64 · macOS 14+ · Linux x64 / arm64 · v2.23.0 · MIT License",
     "cta.download": "Download for Windows / macOS / Linux",
     "cta.gh": "View on GitHub",
 
